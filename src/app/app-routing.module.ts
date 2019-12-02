@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'pages'
+    redirectTo: 'pages/home'
   }
 ];
 
