@@ -101,7 +101,7 @@ footer {
 }
 
 .footer-big {
-  padding: 105px 0 65px 0
+  padding: 20px 0 65px 0
 }
 
 .footer-big .footer-widget {
@@ -169,7 +169,7 @@ footer {
 }
 
 .widget-about p {
-  font-weight: 400
+  font-weight: 400;
 }
 
 .widget-about .contact-details {
@@ -196,4 +196,23 @@ footer {
   .footer-menu {
     padding-left: 0
   }
+  .footer-big {
+    ul > li, h4 {
+      text-align: center;
+    }
+  }
+
+  .widget-about img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .widget-about p {
+    text-align: center;
+  }
+}
+
+
+.navbar-light .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0);
 }
