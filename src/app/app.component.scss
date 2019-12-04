@@ -4,6 +4,7 @@
 
 ul li a {
   margin-right: 20px;
+  font-size: 20px;
 }
 
 .carousel {
@@ -113,7 +114,8 @@ footer {
 }
 
 .footer-big .footer-menu ul li a, .footer-big p, .footer-big ul li {
-  color: #898b96
+  color: #1e1f27;
+  font-size: 20px;
 }
 
 .footer-menu {
@@ -125,7 +127,7 @@ footer {
   line-height: 32px;
   -webkit-transition: .3s;
   -o-transition: .3s;
-  transition: .3s
+  transition: .3s;
 }
 
 .footer-menu ul li a:hover {
@@ -139,7 +141,7 @@ footer {
 .footer-widget-title {
   line-height: 42px;
   margin-bottom: 10px;
-  font-size: 18px
+  font-size: 25px
 }
 
 .mini-footer {
