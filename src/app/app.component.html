@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-sm   navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" routerLink="/pages/home" routerLinkActive="active">Foody</a>
+      <a class="navbar-brand font-weight-bold" routerLink="/pages/home" routerLinkActive="active">Belicious</a>
 
       <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarToggler"
               aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -182,8 +182,8 @@
               </p>
             </div>
 
-            <div class="go_top">
-              <span class="icon-arrow-up"></span>
+            <div class="go_top" (click)="onActivate($event)">
+              <span class="fa fa-arrow-up"></span>
             </div>
           </div>
         </div>
