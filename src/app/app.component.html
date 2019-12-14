@@ -1,7 +1,8 @@
 <header>
-  <nav class="navbar navbar-expand-sm   navbar-light bg-light">
+  <nav class="navbar navbar-expand-sm bg-black fixed-top">
     <div class="container">
-      <a class="navbar-brand font-weight-bold" routerLink="/pages/home" routerLinkActive="active">Belicious</a>
+      <a class="band-logo font-weight-bold"
+         routerLink="/pages/home"><span class="fa fa-themeisle"></span> Belicious</a>
 
       <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarToggler"
               aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,15 +10,18 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarToggler">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/pages/home" routerLinkActive="active">Home</a>
+            <a class="nav-link mr-0" routerLink="/pages/home" routerLinkActive="active-link">
+              Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/pages/about-us" routerLinkActive="active">About Us</a>
+            <a class="nav-link mr-0" routerLink="/pages/about-us" routerLinkActive="active-link">
+              About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/pages/contact-us" routerLinkActive="active">Contact Us</a>
+            <a class="nav-link mr-0" routerLink="/pages/contact-us" routerLinkActive="active-link">
+              Contact Us</a>
           </li>
 
           <!--        <li class="nav-item dropdown dmenu">-->
@@ -31,11 +35,11 @@
           <!--          </div>-->
           <!--        </li>-->
         </ul>
-        <div class="social-part">
-          <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-          <a href=""> <i class="fa fa-twitter" aria-hidden="true"></i></a>
-          <a href=""> <i class="fa fa-instagram" aria-hidden="true"></i></a>
-        </div>
+        <!--        <div class="social-part">-->
+        <!--          <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>-->
+        <!--          <a href=""> <i class="fa fa-twitter" aria-hidden="true"></i></a>-->
+        <!--          <a href=""> <i class="fa fa-instagram" aria-hidden="true"></i></a>-->
+        <!--        </div>-->
       </div>
     </div>
   </nav>

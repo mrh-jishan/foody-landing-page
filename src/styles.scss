@@ -1,15 +1,47 @@
-@import url('https://fonts.googleapis.com/css?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Yeseva+One&display=swap');
 
-* {
-  font-family: 'Rancho', cursive, sans-serif;
+.bg-black {
+  background-color: #000000;
 }
 
-.sb-text-primary {
+body {
+  min-height: 75rem;
+  padding-top: 3.7rem;
+}
+
+h1, h2, .band-logo {
+  font-family: 'Yeseva One', cursive;
+}
+
+a, p, span, h4 {
+  font-family: 'Open Sans', serif;
+}
+
+a:hover {
+  color: #ed6a5e !important;
+}
+
+.nav-link {
+  color: #ffffff !important;
+  font-size: 15px !important;
+}
+
+.sb-text-primary, .active-link {
   color: #ed6a5e !important;
 }
 
 .app-icon {
   height: 150px;
   width: 150px;
+}
+
+
+a.band-logo {
+  color: #ffffff !important;
+  font-size: 30px;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
