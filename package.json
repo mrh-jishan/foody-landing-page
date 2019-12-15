@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --aot",
     "publish": "ng deploy --base-href=/foody-landing-page/ --repo=git@github.com:mrh-jishan/foody-landing-page.git --name='mrh-jishan' --email=robiul.hassan12102@gmail.com",
     "test": "ng test",
     "lint": "ng lint",
