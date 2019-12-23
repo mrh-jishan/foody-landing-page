@@ -11,11 +11,6 @@ ul li a {
   margin-bottom: 4rem;
 }
 
-.carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
-}
-
 .carousel-item {
   height: 32rem;
   background-color: #777;
@@ -39,6 +34,11 @@ ul li a {
     font-size: 1.25rem;
     line-height: 1.4;
   }
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
 }
 
 footer {
@@ -173,7 +173,7 @@ footer {
   margin: 23px 0 0 0
 }
 
-.widget-about  li{
+.widget-about li {
   margin-bottom: 10px
 }
 

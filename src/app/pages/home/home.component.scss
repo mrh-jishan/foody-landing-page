@@ -3,12 +3,35 @@
 }
 
 .carousel-caption {
-  bottom: 30vh;
-
   p {
     font-size: 20px;
   }
 }
+
+@media (min-width: 576px) { // Small devices (landscape phones, 576px and up)
+  .carousel-caption {
+    bottom: 43px !important;
+  }
+}
+
+@media (min-width: 768px) { // Medium devices (tablets, 768px and up)
+  .carousel-caption {
+    bottom: 150px !important;
+  }
+}
+
+@media (min-width: 992px) { // Large devices (desktops, 992px and up)
+  .carousel-caption {
+    bottom: 180px !important;
+  }
+}
+
+@media (min-width: 1200px) { // Extra large devices (large desktops, 1200px and up)
+  .carousel-caption {
+    bottom: 350px !important;
+  }
+}
+
 
 .sb-app-c6 {
   padding-top: 2rem;
