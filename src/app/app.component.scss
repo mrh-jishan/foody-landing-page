@@ -4,7 +4,7 @@
 
 ul li a {
   margin-right: 20px;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .carousel {
@@ -101,10 +101,6 @@ footer {
   display: inline-block
 }
 
-.footer-big {
-  padding: 20px 0 65px 0
-}
-
 .footer-big .footer-widget {
   margin-bottom: 40px
 }
@@ -115,7 +111,7 @@ footer {
 
 .footer-big .footer-menu ul li a, .footer-big p, .footer-big ul li {
   color: #1e1f27;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .footer-menu {
@@ -139,9 +135,9 @@ footer {
 }
 
 .footer-widget-title {
-  line-height: 42px;
   margin-bottom: 10px;
-  font-size: 25px
+  font-size: 20px;
+  margin-top: 30px;
 }
 
 .mini-footer {
@@ -167,30 +163,29 @@ footer {
 
 .widget-about img {
   display: block;
-  margin-bottom: 30px
 }
 
 .widget-about p {
   font-weight: 400;
 }
 
-.widget-about .contact-details {
-  margin: 30px 0 0 0
+.widget-about {
+  margin: 23px 0 0 0
 }
 
-.widget-about .contact-details li {
+.widget-about  li{
   margin-bottom: 10px
 }
 
-.widget-about .contact-details li:last-child {
+.widget-about li:last-child {
   margin-bottom: 0
 }
 
-.widget-about .contact-details li span {
+.widget-about li span {
   padding-right: 12px
 }
 
-.widget-about .contact-details li a {
+.widget-about li a {
   color: #5867dd
 }
 
