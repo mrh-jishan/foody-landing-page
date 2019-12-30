@@ -26,9 +26,21 @@
   }
 }
 
+@media (min-width: 1000px) {
+  .carousel-caption {
+    bottom: 190px !important;
+  }
+}
+
+@media (min-width: 1085px) {
+  .carousel-caption {
+    bottom: 180px !important;
+  }
+}
+
 @media (min-width: 1200px) { // Extra large devices (large desktops, 1200px and up)
   .carousel-caption {
-    bottom: 350px !important;
+    bottom: 280px !important;
   }
 }
 
