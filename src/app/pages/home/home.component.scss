@@ -15,11 +15,16 @@
 
 }
 
-//@media (min-width: 576px) { // Small devices (landscape phones, 576px and up)
-//  .carousel-caption {
-//    bottom: 43px !important;
-//  }
-//}
+@media (max-width: 500px) { // Small devices (landscape phones, 576px and up)
+  .carousel-caption {
+    bottom: 0 !important;
+
+    p {
+      font-size: 8px;
+    }
+  }
+}
+
 //
 //@media (min-width: 768px) { // Medium devices (tablets, 768px and up)
 //  .carousel-caption {
@@ -117,6 +122,6 @@ section {
 }
 
 .text-align {
-  padding-left: 40px;
+  padding: 0 40px;
   text-align: justify;
 }
