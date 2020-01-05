@@ -1,8 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {PublicComponent} from './public.component';
 import {HomeComponent} from './home/home.component';
 import {AboutUsComponent} from './about-us/about-us.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
+import {JoinComponent} from './join/join.component';
+import {LoginComponent} from './login/login.component';
 
 
 const routes: Routes = [
@@ -13,18 +16,26 @@ const routes: Routes = [
   },
   {
     path: '',
+    component: PublicComponent,
     children: [
       {
         path: 'home',
         component: HomeComponent
-      },
-      {
+      }, {
         path: 'about-us',
         component: AboutUsComponent
       },
       {
         path: 'contact-us',
         component: ContactUsComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'join-us',
+        component: JoinComponent
       }
     ]
   }
@@ -34,5 +45,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PagesRoutingModule {
+export class PublicRoutingModule {
 }

@@ -1,0 +1,34 @@
+.navbar-login {
+  width: 305px;
+  padding: 10px 10px 0;
+}
+
+.navbar-login-session {
+  padding: 0 10px;
+}
+
+.icon-size {
+  font-size: 87px;
+}
+
+.r-menu {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-menu:after {
+  top: -14px;
+  right: 10px;
+  left: auto;
+}
+
+.dropdown-menu:after {
+  border: 7px solid transparent;
+  border-bottom-color: #fff;
+}
+
+.dropdown-menu:after, .dropdown-menu:before {
+  position: absolute;
+  display: inline-block;
+  content: "";
+}

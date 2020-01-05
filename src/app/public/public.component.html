@@ -1,0 +1,204 @@
+<header>
+  <nav class="navbar navbar-expand-sm bg-black fixed-top">
+    <div class="container">
+      <a class="band-logo font-weight-bold" routerLink="/public/home">
+        <span class="fa fa-themeisle"></span>
+        Belicious
+      </a>
+
+      <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarToggler"
+              aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <i class="fa fa-bars" style="color:#fff; font-size:28px;"></i>
+        </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link mr-0" routerLink="/public/home" routerLinkActive="active-link">
+              Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-0" routerLink="/public/about-us" routerLinkActive="active-link">
+              About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mr-0" routerLink="/public/contact-us" routerLinkActive="active-link">
+              Contact Us</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link btn btn-primary nav-btn" [routerLink]="['/public/login']">
+              Login
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link btn btn-danger nav-btn" [routerLink]="['/public/join-us']">
+              Join Us
+            </a>
+          </li>
+
+          <!--        <li class="nav-item dropdown dmenu">-->
+          <!--          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">-->
+          <!--            Our Service-->
+          <!--          </a>-->
+          <!--          <div class="dropdown-menu sm-menu">-->
+          <!--            <a class="dropdown-item" href="#">service2</a>-->
+          <!--            <a class="dropdown-item" href="#">service 2</a>-->
+          <!--            <a class="dropdown-item" href="#">service 3</a>-->
+          <!--          </div>-->
+          <!--        </li>-->
+        </ul>
+        <!--        <div class="social-part">-->
+        <!--          <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>-->
+        <!--          <a href=""> <i class="fa fa-twitter" aria-hidden="true"></i></a>-->
+        <!--          <a href=""> <i class="fa fa-instagram" aria-hidden="true"></i></a>-->
+        <!--        </div>-->
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main role="main" class="public">
+
+  <router-outlet></router-outlet>
+
+  <footer class="footer-area footer--light footer-big">
+    <!-- start .container -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <div class="footer-widget">
+            <div class="widget-about">
+              <img src="assets/icons/app-icon-ash-bg.png" alt="" class="img-fluid">
+              <p> 25 Topkhana Road, Segunbagicha, Flat no: C-1, Dhaka-1000, Bangladesh</p>
+            </div>
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-md-4 -->
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu footer-menu--1">
+              <h4 class="footer-widget-title sb-text-primary">Popular Category</h4>
+              <ul>
+                <li>
+                  <a href="#">Indian</a>
+                </li>
+                <li>
+                  <a href="#">Korean</a>
+                </li>
+                <li>
+                  <a href="#">Chinese</a>
+                </li>
+                <li>
+                  <a href="#">Western</a>
+                </li>
+                <li>
+                  <a href="#">Thai & Vietnam</a>
+                </li>
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-md-3 -->
+
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu">
+              <h4 class="footer-widget-title sb-text-primary">Our Company</h4>
+              <ul>
+                <li>
+                  <a href="#">About Us</a>
+                </li>
+                <li>
+                  <a href="#">How It Works</a>
+                </li>
+                <li>
+                  <a href="#">Affiliates</a>
+                </li>
+                <li>
+                  <a href="#">Testimonials</a>
+                </li>
+                <li>
+                  <a href="#">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#">Plan &amp; Pricing</a>
+                </li>
+                <li>
+                  <a href="#">Blog</a>
+                </li>
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-lg-3 -->
+
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu p-0">
+              <h4 class="footer-widget-title sb-text-primary">Help Support</h4>
+              <ul class="p-0 m-0">
+                <li>
+                  <a href="#">Support Forum</a>
+                </li>
+                <li>
+                  <a href="#">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                  <a href="#">Support Policy</a>
+                </li>
+                <li>
+                  <a href="#">Refund Policy</a>
+                </li>
+                <li>
+                  <a href="#">FAQs</a>
+                </li>
+                <li>
+                  <a href="#">Buyers Faq</a>
+                </li>
+                <li>
+                  <a href="#">Sellers Faq</a>
+                </li>
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- Ends: .col-lg-3 -->
+
+      </div>
+      <!-- end /.row -->
+    </div>
+    <!-- end /.container -->
+
+    <div class="mini-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="copyright-text">
+              <p>© 2018
+                <a routerLink="/">Belicious</a>. All rights reserved. Created by
+                <a routerLink="/">Belicious.com</a>
+              </p>
+            </div>
+
+            <div class="go_top" (click)="onActivate($event)">
+              <span class="fa fa-arrow-up"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+
