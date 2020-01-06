@@ -262,6 +262,14 @@ footer {
   }
 }
 
-sub {
+sub, sup {
   color: #ff004b;
+}
+
+label {
+  margin-bottom: 3px !important;
+}
+
+.custom-radio {
+  padding-top: 3px;
 }

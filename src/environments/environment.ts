@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   api: {
-    host: 'https://radiant-tundra-29018.herokuapp.com'
+    host: 'http://radiant-tundra-29018.herokuapp.com'
   }
 };
 

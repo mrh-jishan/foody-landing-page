@@ -9,6 +9,9 @@ import {ContactUsComponent} from './contact-us/contact-us.component';
 import {LoginComponent} from './login/login.component';
 import {JoinComponent} from './join/join.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {ModalModule} from '../common/modal';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 
 
 @NgModule({
@@ -18,12 +21,15 @@ import {ReactiveFormsModule} from '@angular/forms';
     AboutUsComponent,
     ContactUsComponent,
     LoginComponent,
-    JoinComponent
+    JoinComponent,
+    ForgetPasswordComponent,
+    ConfirmEmailComponent
   ],
   imports: [
     CommonModule,
     PublicRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalModule
   ]
 })
 export class PublicModule {

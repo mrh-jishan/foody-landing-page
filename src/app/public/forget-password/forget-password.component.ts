@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../../service/auth.service';
 import {noop, Observable} from 'rxjs';
+import {Router} from '@angular/router';
+import {AuthService} from '../../service/auth.service';
 import {tap} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-forget-password',
+  templateUrl: './forget-password.component.html',
+  styleUrls: ['./forget-password.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class ForgetPasswordComponent implements OnInit {
 
   loginFrom: FormGroup;
   $user: Observable<any>;

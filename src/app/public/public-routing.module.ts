@@ -6,6 +6,8 @@ import {AboutUsComponent} from './about-us/about-us.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {JoinComponent} from './join/join.component';
 import {LoginComponent} from './login/login.component';
+import {ForgetPasswordComponent} from './forget-password/forget-password.component';
+import {ConfirmEmailComponent} from './confirm-email/confirm-email.component';
 
 
 const routes: Routes = [
@@ -36,6 +38,14 @@ const routes: Routes = [
       {
         path: 'join-us',
         component: JoinComponent
+      },
+      {
+        path: 'forget-password',
+        component: ForgetPasswordComponent
+      },
+      {
+        path: 'email-confirm/:confirmation-code',
+        component: ConfirmEmailComponent
       }
     ]
   }

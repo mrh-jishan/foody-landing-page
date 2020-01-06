@@ -4,12 +4,9 @@
       <div class="col-md-4 py-5 bg-info text-white text-center ">
         <div class=" ">
           <div class="card-body">
-            <!--            <img src="assets/images/Octocat.png" style="width:30%">-->
+            <img src="assets/icons/login.png" style="width:60%">
             <h2 class="py-3">Registration</h2>
-            <p>Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto
-              patrioque an per, lucilius pertinacia eu vel.
-
-            </p>
+            <p>Your next home made food is just one-click away.</p>
           </div>
         </div>
       </div>
@@ -17,35 +14,56 @@
         <h4 class="pb-4">Please fill with your details</h4>
         <form [formGroup]="joinForm">
           <div class="form-row">
-
             <div class="form-group col-md-6">
-              <input id="Full Name" name="Full Name" placeholder="Full Name" class="form-control" type="text"
-                     formControlName="name">
+              <label>First Name <sup>*</sup></label>
+              <input class="form-control" type="text" formControlName="fName">
             </div>
-
             <div class="form-group col-md-6">
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email" formControlName="email">
+              <label>Last Name <sup>*</sup></label>
+              <input class="form-control" type="text" formControlName="lName">
+            </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label>Email Address <sup>*</sup></label>
+              <input class="form-control" required="required" type="text" formControlName="email">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label>Password <sup>*</sup></label>
+              <input class="form-control" required="required" type="password" formControlName="password">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <input id="Mobile No." name="Mobile No." placeholder="Mobile No." class="form-control" required="required"
-                     type="text" formControlName="phone">
-            </div>
-            <div class="form-group col-md-6">
+              <label>Gender <sup>*</sup></label>
+              <div class="flex-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-sm btn-outline-success" [ngClass]="{active : gender == 'male'}"
+                         (click)="onGenderChange('male')">
+                    <input type="radio" name="options" autocomplete="off" checked="checked"> Male
+                  </label>
 
-              <select id="inputState" class="form-control" formControlName="type">
-                <option selected>Choose ...</option>
-                <option> New Buyer</option>
-                <option> Auction</option>
-                <option> Complaint</option>
-                <option> Feedback</option>
-              </select>
+                  <label class="btn btn-sm btn-outline-success" [ngClass]="{active : gender == 'female'}"
+                         (click)="onGenderChange('female')">
+                    <input type="radio" name="options" autocomplete="off"> Female
+                  </label>
+                </div>
+              </div>
             </div>
-            <div class="form-grSignoup col-md-12">
-              <textarea id="comment" name="comment" cols="40" rows="5" class="form-control"
-                        formControlName="about"></textarea>
+
+            <div class="form-group col-md-6">
+              <label>Role <sup>*</sup></label>
+              <select class="form-control" formControlName="role">
+                <!--                <option value="admin"> Admin</option>-->
+                <option value="customer"> Customer</option>
+                <option value="chef"> Chef</option>
+              </select>
             </div>
           </div>
 
@@ -53,10 +71,9 @@
             <div class="form-group">
               <div class="form-group">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="invalidCheck2" formControlName="terms">
-                  <label class="form-check-label" for="invalidCheck2">
-                    <small>By clicking Submit, you agree to our Terms & Conditions, Visitor Agreement and Privacy
-                      Policy.</small>
+                  <input class="form-check-input" type="checkbox" formControlName="terms">
+                  <label class="form-check-label">
+                    <small>By clicking Submit, you agree to our Terms & Conditions.</small>
                   </label>
                 </div>
               </div>
@@ -65,15 +82,23 @@
           </div>
 
           <div class="form-row pull-right">
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" (click)="joinUs()" [disabled]="joinForm.invalid">Join Us
+            </button>
           </div>
         </form>
 
 
         <div class="p-3 text-center">
-          Already have an account? <a [routerLink]="['/auth/login']">Log In</a>
+          Already have an account? <a [routerLink]="['/public/login']">Log In</a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
+<app-jw-modal id="join-error-message">
+  <h1>A Custom Modal!</h1>
+  <p>Home page text:</p>
+  <button (click)="closeModal('join-error-message');">Close</button>
+</app-jw-modal>
