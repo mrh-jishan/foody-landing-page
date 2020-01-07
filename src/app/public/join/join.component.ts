@@ -4,7 +4,6 @@ import {AuthService} from '../../service/auth.service';
 import {tap} from 'rxjs/operators';
 import {noop} from 'rxjs';
 import {Router} from '@angular/router';
-import {ModalService} from '../../common/modal';
 
 @Component({
   selector: 'app-join',
@@ -16,11 +15,9 @@ export class JoinComponent implements OnInit {
   joinForm: FormGroup;
   public gender = 'male';
 
-  constructor(
-    private router: Router,
-    private fb: FormBuilder,
-    private auth: AuthService,
-    private modalService: ModalService) {
+  constructor(private router: Router,
+              private fb: FormBuilder,
+              private auth: AuthService) {
   }
 
   ngOnInit() {
@@ -42,7 +39,6 @@ export class JoinComponent implements OnInit {
 
   joinUs() {
     const value = this.joinForm.value;
-
     const body = {
       user: {
         first_name: value.fName,
@@ -62,13 +58,4 @@ export class JoinComponent implements OnInit {
       // this.openModal('join-error-message');
     });
   }
-
-  openModal(id: string) {
-    this.modalService.open(id);
-  }
-
-  closeModal(id: string) {
-    this.modalService.close(id);
-  }
-
 }

@@ -8,6 +8,7 @@ import {JoinComponent} from './join/join.component';
 import {LoginComponent} from './login/login.component';
 import {ForgetPasswordComponent} from './forget-password/forget-password.component';
 import {ConfirmEmailComponent} from './confirm-email/confirm-email.component';
+import {AuthResolverService} from '../service/auth-resolver.service';
 
 
 const routes: Routes = [
@@ -44,8 +45,9 @@ const routes: Routes = [
         component: ForgetPasswordComponent
       },
       {
-        path: 'email-confirm/:confirmation-code',
-        component: ConfirmEmailComponent
+        path: 'email-confirm/:code',
+        component: ConfirmEmailComponent,
+        resolve: {user: AuthResolverService}
       }
     ]
   }

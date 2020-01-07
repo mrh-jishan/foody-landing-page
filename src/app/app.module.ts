@@ -5,17 +5,21 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {MessageModalModule} from './common/message-modal/message-modal.module';
+import {ModalDialogModule} from 'ngx-modal-dialog';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MessageModalModule,
+    ModalDialogModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

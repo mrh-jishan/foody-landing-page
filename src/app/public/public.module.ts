@@ -9,9 +9,9 @@ import {ContactUsComponent} from './contact-us/contact-us.component';
 import {LoginComponent} from './login/login.component';
 import {JoinComponent} from './join/join.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {ModalModule} from '../common/modal';
-import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
+import {ForgetPasswordComponent} from './forget-password/forget-password.component';
+import {ConfirmEmailComponent} from './confirm-email/confirm-email.component';
+import {AuthResolverService} from '../service/auth-resolver.service';
 
 
 @NgModule({
@@ -28,8 +28,10 @@ import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
   imports: [
     CommonModule,
     PublicRoutingModule,
-    ReactiveFormsModule,
-    ModalModule
+    ReactiveFormsModule
+  ],
+  providers: [
+    AuthResolverService
   ]
 })
 export class PublicModule {

@@ -273,3 +273,14 @@ label {
 .custom-radio {
   padding-top: 3px;
 }
+
+.v-center {
+  display: flex;
+  align-items: center;
+}
+
+.r-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

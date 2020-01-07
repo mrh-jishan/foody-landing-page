@@ -17,4 +17,8 @@ export class AuthService {
   join(body) {
     return this.http.post(`${environment.api.host}/api/v1/user`, body);
   }
+
+  email_confirmation(token) {
+    return this.http.put(`${environment.api.host}/api/v1/auth/${token}`, {});
+  }
 }

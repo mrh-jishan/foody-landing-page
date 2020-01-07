@@ -1,9 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {noop, Observable} from 'rxjs';
-import {Router} from '@angular/router';
-import {AuthService} from '../../service/auth.service';
-import {tap} from 'rxjs/operators';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-confirm-email',
@@ -12,39 +8,34 @@ import {tap} from 'rxjs/operators';
 })
 export class ConfirmEmailComponent implements OnInit {
 
-  loginFrom: FormGroup;
-  $user: Observable<any>;
+  data: any;
 
-  constructor(private router: Router,
-              private fb: FormBuilder,
-              private auth: AuthService) {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.loginFrom = this.fb.group({
-      email: ['', Validators.compose([Validators.required])],
-      password: ['', Validators.compose([Validators.required])]
-    });
-  }
-
-  login() {
-    const value = this.loginFrom.value;
-    const body = {
-      auth: {
-        password: value.password,
-        email: value.email
-      }
-    };
-    this.auth.login(body).pipe(
-      tap(user => {
-        console.log(user);
-        this.router.navigateByUrl('/secure/dashboard');
-      })).subscribe(
-      noop, (err) => {
-        console.log(err);
-        alert(err.error.message);
-      });
-    // this.router.navigate(['/secure/dashboard']);
+    this.data = this.route.snapshot.data;
+    // {
+    //   "user": {
+    //   "data": {
+    //     "user": {
+    //       "email_confirmed": true,
+    //         "id": 3,
+    //         "email": "robinhassan.cs@gmail.com",
+    //         "first_name": "robin",
+    //         "last_name": "hassan",
+    //         "gender": "male",
+    //         "role": "customer",
+    //         "created_at": "2020-01-06T16:26:52.507Z",
+    //         "updated_at": "2020-01-07T15:12:40.866Z"
+    //     }
+    //   },
+    //   "success": true,
+    //     "message": "",
+    //     "code": 200,
+    //     "time": "2020-01-07T15:12:40.873Z"
+    // }
+    // }
   }
 
 }
