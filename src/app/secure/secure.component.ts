@@ -1,8 +1,8 @@
 import {AfterContentChecked, Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
 import {AuthService} from '../service/auth.service';
 import {Router} from '@angular/router';
 import {HOME_PATH} from '../service/constant';
+import {User} from '../service/model';
 
 @Component({
   selector: 'app-secure',
@@ -10,7 +10,7 @@ import {HOME_PATH} from '../service/constant';
   styleUrls: ['./secure.component.scss']
 })
 export class SecureComponent implements OnInit, AfterContentChecked {
-  $user: Observable<any>;
+  user: User;
 
   constructor(private auth: AuthService, private router: Router) {
   }
@@ -26,7 +26,7 @@ export class SecureComponent implements OnInit, AfterContentChecked {
   }
 
   ngAfterContentChecked() {
-    this.$user = this.auth.user;
+    this.user = this.auth.user;
   }
 
 }

@@ -22,7 +22,7 @@
             <a class="nav-link dropdown-toggle text-white" href="#" id="profile"
                role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
-              Md Robiul Hassan
+              {{user.first_name}} {{user.last_name}}
             </a>
             <div class="dropdown-menu r-menu" aria-labelledby="profile">
               <a class="dropdown-item" href="#">Profile</a>
@@ -130,7 +130,7 @@
   </nav>
   <div class="page-content secure">
     <div class="container-fluid">
-      user------------ {{$user|json}}
+      user------------ {{user|json}}
       <router-outlet></router-outlet>
     </div>
     <footer class="bg-light footer-big">

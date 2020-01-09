@@ -2,14 +2,15 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {BehaviorSubject} from 'rxjs';
+import {User} from './model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  user = null;
-  user$ = new BehaviorSubject<string>(null);
+  user: User = {};
+  user$ = new BehaviorSubject<User>(null);
 
   constructor(private http: HttpClient) {
     this.user$.next(this.user);
