@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     const body = {
       auth: {
         password: value.password,
-        email: value.email
+        email: value.email.toLowerCase()
       }
     };
     this.auth.login(body).pipe(tap(user => {

@@ -45,7 +45,7 @@ export class JoinComponent implements OnInit {
         last_name: value.lName,
         password: value.password,
         gender: value.gender,
-        email: value.email,
+        email: value.email.toLowerCase(),
         role: value.role
       }
     };
