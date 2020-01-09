@@ -25,9 +25,9 @@
               {{user.first_name}} {{user.last_name}}
             </a>
             <div class="dropdown-menu r-menu" aria-labelledby="profile">
-              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" routerLink="/secure/profile">Profile</a>
               <div role="none" class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Change Password</a>
+              <a class="dropdown-item" routerLink="/secure/change-password">Change Password</a>
               <div role="none" class="dropdown-divider"></div>
               <a class="dropdown-item" (click)="logout()">Logout</a>
             </div>
@@ -70,19 +70,27 @@
             <span>General</span>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a routerLink="/secure/dashboard" routerLinkActive="active">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
-              <!--              <span class="badge badge-pill badge-warning">New</span>-->
             </a>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a routerLink="/secure/order-cart" routerLinkActive="active">
               <i class="fa fa-shopping-cart"></i>
-              <span>E-commerce</span>
+              <span>Order Cart</span>
               <span class="badge badge-pill badge-danger">3</span>
             </a>
           </li>
+
+          <li class="sidebar-dropdown">
+            <a routerLink="/secure/order-list" routerLinkActive="active">
+              <i class="fa fa-shopping-cart"></i>
+              <span>Order List</span>
+              <span class="badge badge-pill badge-danger">3</span>
+            </a>
+          </li>
+
           <li class="header-menu">
             <span>Extra</span>
           </li>
@@ -123,7 +131,7 @@
         <i class="fa fa-cog"></i>
         <!--        <span class="badge-sonar"></span>-->
       </a>
-      <a href="#">
+      <a (click)="logout()">
         <i class="fa fa-power-off"></i>
       </a>
     </div>

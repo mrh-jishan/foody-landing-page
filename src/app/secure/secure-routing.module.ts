@@ -3,6 +3,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {SecureComponent} from './secure.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ProfileComponent} from './profile/profile.component';
+import {OrderCartComponent} from './order-cart/order-cart.component';
+import {OrderListComponent} from './order-list/order-list.component';
+import {ChangePasswordComponent} from './change-password/change-password.component';
 
 
 const routes: Routes = [
@@ -21,6 +24,18 @@ const routes: Routes = [
       }, {
         path: 'profile',
         component: ProfileComponent
+      },
+      {
+        path: 'order-cart',
+        component: OrderCartComponent
+      },
+      {
+        path: 'order-list',
+        component: OrderListComponent
+      },
+      {
+        path: 'change-password',
+        component: ChangePasswordComponent
       }
     ]
   }
