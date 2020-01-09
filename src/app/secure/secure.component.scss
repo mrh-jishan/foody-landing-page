@@ -1,6 +1,12 @@
+@import 'src/assets/scss/secure.scss';
+
 .navbar-login {
   width: 305px;
   padding: 10px 10px 0;
+}
+
+.bg-nav-red {
+  background: #dc3545;
 }
 
 .navbar-login-session {
@@ -31,4 +37,12 @@
   position: absolute;
   display: inline-block;
   content: "";
+}
+
+.copyright-text {
+  text-align: center;
+
+  p {
+    margin-bottom: 0;
+  }
 }
