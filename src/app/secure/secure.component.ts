@@ -1,8 +1,9 @@
-import {AfterContentChecked, Component, OnInit} from '@angular/core';
+import {AfterContentChecked, Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {AuthService} from '../service/auth.service';
 import {Router} from '@angular/router';
 import {HOME_PATH} from '../service/constant';
 import {User} from '../service/model';
+import {SideBarService} from '../service/side-bar.service';
 
 @Component({
   selector: 'app-secure',
@@ -10,9 +11,16 @@ import {User} from '../service/model';
   styleUrls: ['./secure.component.scss']
 })
 export class SecureComponent implements OnInit, AfterContentChecked {
-  user: User;
 
-  constructor(private auth: AuthService, private router: Router) {
+  @ViewChild('sideBar', {static: false}) sideBar;
+  @ViewChild('sidebarOpenButton', {static: false}) sidebarOpenButton;
+
+  user: User;
+  isOpen = false;
+
+  constructor(private auth: AuthService,
+              private router: Router,
+              private sideBarService: SideBarService) {
   }
 
   ngOnInit() {
@@ -27,6 +35,22 @@ export class SecureComponent implements OnInit, AfterContentChecked {
 
   ngAfterContentChecked() {
     this.user = this.auth.user;
+    this.isOpen = this.sideBarService.isOpen;
+  }
+
+  openSidebar() {
+    this.sideBarService.update_sidebar(true);
+  }
+
+  @HostListener('document:click', ['$event.target'])
+  onClick(event) {
+    if (this.sidebarOpenButton.nativeElement.contains(event)) {
+      this.sideBarService.update_sidebar(true);
+    } else if (this.sideBar.nativeElement.contains(event)) {
+      this.sideBarService.update_sidebar(true);
+    } else {
+      this.sideBarService.update_sidebar(false);
+    }
   }
 
 }

@@ -39,13 +39,13 @@
   </nav>
 </header>
 
-<!--<main role="main" class="secure">-->
-<main role="main" class="page-wrapper chiller-theme toggled">
-  <a id="show-sidebar" class="btn btn-sm btn-dark">
+
+<main role="main" class="page-wrapper chiller-theme" [class.toggled]="isOpen">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" (click)="openSidebar()" #sidebarOpenButton>
     <i class="fa fa-bars text-white"></i>
   </a>
 
-  <nav id="sidebar" class="sidebar-wrapper secure">
+  <nav id="sidebar" class="sidebar-wrapper secure" #sideBar>
     <div class="sidebar-content">
       <div class="sidebar-header">
         <div class="user-pic">
