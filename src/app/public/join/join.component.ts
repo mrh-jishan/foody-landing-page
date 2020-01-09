@@ -1,9 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../service/auth.service';
 import {tap} from 'rxjs/operators';
 import {noop} from 'rxjs';
 import {Router} from '@angular/router';
+import {LOGIN_PATH} from '../../service/constant';
+import {MessageModalComponent} from '../../common/message-modal/message-modal.component';
+import {ModalDialogService} from 'ngx-modal-dialog';
 
 @Component({
   selector: 'app-join',
@@ -17,7 +20,9 @@ export class JoinComponent implements OnInit {
 
   constructor(private router: Router,
               private fb: FormBuilder,
-              private auth: AuthService) {
+              private auth: AuthService,
+              private modalService: ModalDialogService,
+              private viewRef: ViewContainerRef) {
   }
 
   ngOnInit() {
@@ -51,11 +56,20 @@ export class JoinComponent implements OnInit {
     };
 
     this.auth.join(body).pipe(tap(user => {
-      this.router.navigateByUrl('/public/login');
+      this.router.navigateByUrl(LOGIN_PATH).then(t => console.log('redirect to login path'));
     })).subscribe(noop, (err: any) => {
       console.log(err);
-      alert('Sorry! ' + err.error.data[0]);
-      // this.openModal('join-error-message');
+      this.openNewDialog(err.error.data);
+    });
+  }
+
+  openNewDialog(message) {
+    this.modalService.openDialog(this.viewRef, {
+      data: message,
+      title: 'Message',
+      childComponent: MessageModalComponent,
+      actionButtons: [{text: 'Close'}],
+      settings: {contentClass: 'modal-content w-350'}
     });
   }
 }

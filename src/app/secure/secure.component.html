@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-sm bg-nav-red fixed-top">
     <div class="container-fluid">
       <a class="band-logo font-weight-bold"
-         routerLink="/secure"><span class="fa fa-themeisle"></span> Belicious</a>
+         routerLink="/secure"><span class="fa fa-themeisle"></span> Belicious </a>
 
       <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarToggler"
               aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
               <div role="none" class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Change Password</a>
               <div role="none" class="dropdown-divider"></div>
-              <a class="dropdown-item" routerLink="/public">Logout</a>
+              <a class="dropdown-item" (click)="logout()">Logout</a>
             </div>
 
           </li>
@@ -130,6 +130,7 @@
   </nav>
   <div class="page-content secure">
     <div class="container-fluid">
+      user------------ {{$user|json}}
       <router-outlet></router-outlet>
     </div>
     <footer class="bg-light footer-big">

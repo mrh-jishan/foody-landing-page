@@ -1,17 +1,27 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  user = null;
+  user$ = new BehaviorSubject<string>(null);
+
   constructor(private http: HttpClient) {
+    this.user$.next(this.user);
   }
 
   login(body) {
     return this.http.post(`${environment.api.host}/api/v1/auth`, body);
+  }
+
+  update_user(user: any) {
+    this.user = user;
+    this.user$.next(user);
   }
 
   join(body) {
