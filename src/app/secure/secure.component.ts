@@ -62,9 +62,9 @@ export class SecureComponent implements OnInit, AfterContentChecked {
     if (this.sidebarOpenButton.nativeElement.contains(event)) {
       this.sideBarService.update_sidebar(true);
     } else if (this.sideBar.nativeElement.contains(event)) {
-      this.sideBarService.update_sidebar(true);
+      this.init_windowsize();
     } else {
-      this.sideBarService.update_sidebar(false);
+      this.init_windowsize();
     }
   }
 
