@@ -24,7 +24,7 @@ export class SecureComponent implements OnInit, AfterContentChecked {
   }
 
   ngOnInit() {
-    this.init_windowsize();
+    this.init_window_size();
   }
 
   logout() {
@@ -44,7 +44,7 @@ export class SecureComponent implements OnInit, AfterContentChecked {
   }
 
 
-  init_windowsize() {
+  init_window_size() {
     if (window.innerWidth < 760) {
       this.sideBarService.update_sidebar(false);
     } else {
@@ -54,7 +54,7 @@ export class SecureComponent implements OnInit, AfterContentChecked {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.init_windowsize();
+    this.init_window_size();
   }
 
   @HostListener('document:click', ['$event.target'])
@@ -62,9 +62,9 @@ export class SecureComponent implements OnInit, AfterContentChecked {
     if (this.sidebarOpenButton.nativeElement.contains(event)) {
       this.sideBarService.update_sidebar(true);
     } else if (this.sideBar.nativeElement.contains(event)) {
-      this.init_windowsize();
+      this.init_window_size();
     } else {
-      this.init_windowsize();
+      this.init_window_size();
     }
   }
 
