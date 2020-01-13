@@ -8,6 +8,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import { OrderCartComponent } from './order-cart/order-cart.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { FoodItemComponent } from './food-item/food-item.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     DashboardComponent,
     OrderCartComponent,
     OrderListComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    FoodItemComponent
   ],
   imports: [
     CommonModule,

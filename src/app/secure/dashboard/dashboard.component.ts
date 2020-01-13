@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FoodListService} from '../../service/food-list.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  foodList$ = Array(8);
+
+  constructor(private foodListService: FoodListService) {
+    this.fetch_food_list();
+  }
 
   ngOnInit() {
+  }
+
+  fetch_food_list() {
+    this.foodListService.kitchen_list().subscribe(res => {
+      console.log(res);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  addToCard(food) {
+
   }
 
 }
