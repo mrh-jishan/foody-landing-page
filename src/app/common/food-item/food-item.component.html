@@ -1,37 +1,9 @@
 <section class="features section text-center sb-app-c6">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div class="input-group adv-search">
-          <div class="btn-group search-panel">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-              <span id="search_concept">Filter by</span> <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li class="dropdown-item">
-                <a href="#contains">Food name</a>
-              </li>
-              <div role="none" class="dropdown-divider"></div>
-              <li class="dropdown-item">
-                <a href="#contains">Kitchen name</a>
-              </li>
-            </ul>
-          </div>
-          <input type="text" class="form-control" placeholder="Search for meal"/>
-          <div class="input-group-btn">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-primary">
-                <span class="fa fa-search" aria-hidden="true"></span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
       <div class="features-inner section-inner">
         <div class="row flex-center">
-          <div class="feature col-md-4" *ngFor="let food of foodList$">
+          <div class="feature col-md-4">
             <div class="p-2 card">
               <div class="feature-food-icon">
                 <img src="assets/images/online-payment.svg">
@@ -56,9 +28,10 @@
                 <li class="list-group-item">Vestibulum at eros</li>
               </ul>
               <div class="card-body">
-                <button class="btn btn-danger btn-space" (click)="addToCard(food)">Add to cart <span
+                <button class="btn btn-danger btn-space">Add to cart <span
                   class="fa fa-cart-plus"></span></button>
-                <!--                <button class="btn btn-danger">Order now <span class="fa fa-arrow-right"></span></button>-->
+                
+                <button class="btn btn-danger">Order now <span class="fa fa-arrow-right"></span></button>
               </div>
             </div>
           </div>

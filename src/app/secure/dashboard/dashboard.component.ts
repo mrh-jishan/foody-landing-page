@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {FoodListService} from '../../service/food-list.service';
+import {ModalDialogService} from 'ngx-modal-dialog';
+import {FoodItemComponent} from '../../common/food-item/food-item.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +12,9 @@ export class DashboardComponent implements OnInit {
 
   foodList$ = Array(8);
 
-  constructor(private foodListService: FoodListService) {
+  constructor(private foodListService: FoodListService,
+              private modalService: ModalDialogService,
+              private viewRef: ViewContainerRef) {
     this.fetch_food_list();
   }
 
@@ -26,7 +30,12 @@ export class DashboardComponent implements OnInit {
   }
 
   addToCard(food) {
-
+    this.modalService.openDialog(this.viewRef, {
+      data: food,
+      title: 'TEST FOOD',
+      childComponent: FoodItemComponent,
+      actionButtons: [{text: 'Close'}]
+    });
   }
 
 }
