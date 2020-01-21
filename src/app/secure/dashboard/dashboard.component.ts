@@ -2,6 +2,9 @@ import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {FoodListService} from '../../service/food-list.service';
 import {ModalDialogService} from 'ngx-modal-dialog';
 import {FoodItemComponent} from '../../common/food-item/food-item.component';
+import {noop} from 'rxjs';
+import {tap} from 'rxjs/operators';
+import {DASHBOARD_PATH, LOCAL_STORAGE_TOKEN_KEY} from '../../service/constant';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,17 +18,17 @@ export class DashboardComponent implements OnInit {
   constructor(private foodListService: FoodListService,
               private modalService: ModalDialogService,
               private viewRef: ViewContainerRef) {
-    this.fetch_food_list();
   }
 
   ngOnInit() {
+    this.fetch_food_list();
   }
 
   fetch_food_list() {
-    this.foodListService.kitchen_list().subscribe(res => {
+    this.foodListService.kitchen_list().pipe(tap((res: any) => {
       console.log(res);
-    }, error => {
-      console.log(error);
+    })).subscribe(noop, err => {
+      console.log(err);
     });
   }
 

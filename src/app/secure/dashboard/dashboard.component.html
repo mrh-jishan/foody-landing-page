@@ -1,23 +1,22 @@
 <section class="features section text-center sb-app-c6">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="input-group adv-search">
-          <div class="btn-group search-panel">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-              <span id="search_concept">Filter by</span> <span class="caret"></span>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="input-group adv-search">
+        <input type="text" class="form-control" placeholder="Find your location"/>
+        <div class="input-group-btn">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary">
+              <span class="fa fa-location-arrow" aria-hidden="true"></span>
             </button>
-            <ul class="dropdown-menu" role="menu">
-              <li class="dropdown-item">
-                <a href="#contains">Food name</a>
-              </li>
-              <div role="none" class="dropdown-divider"></div>
-              <li class="dropdown-item">
-                <a href="#contains">Kitchen name</a>
-              </li>
-            </ul>
           </div>
-          <input type="text" class="form-control" placeholder="Search for meal"/>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-title">
+        <div class="input-group adv-search">
+          <input type="text" class="form-control" placeholder="Kitchen, dishes, cuisines"/>
           <div class="input-group-btn">
             <div class="btn-group" role="group">
               <button type="button" class="btn btn-primary">
@@ -27,40 +26,43 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="features-inner section-inner">
-        <div class="row flex-center">
-          <div class="feature col-md-4" *ngFor="let food of foodList$">
-            <div class="p-2 card">
-              <div class="feature-food-icon">
-                <img src="assets/images/online-payment.svg">
-              </div>
-              <h4 class="feature-title h3-mobile mb-8">Bangladeshi Food</h4>
-              <p class="tags">
-                <span class="badge badge-primary">tag1</span>
-                <span class="badge badge-secondary">tag2</span>
-                <span class="badge badge-success">tag3</span>
-                <span class="badge badge-danger">tag4</span>
-                <span class="badge badge-warning">tag5</span>
-                <span class="badge badge-info">tag6</span>
-                <span class="badge badge-light">tag7</span>
-                <span class="badge badge-dark">tag8</span>
-              </p>
-              <p class="sb-text-cancel"><b>Dine together</b> with your colleagues, organize your next
-                <b>meeting</b> or set up a big <b>event</b>: we got you covered.</p>
 
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-              </ul>
-              <div class="card-body">
-                <button class="btn btn-danger btn-space" (click)="addToCard(food)">Add to cart <span
-                  class="fa fa-cart-plus"></span></button>
-                <!--                <button class="btn btn-danger">Order now <span class="fa fa-arrow-right"></span></button>-->
+      <div class="row">
+        <div class="features-inner section-inner">
+          <div class="row flex-center">
+
+            <div class="feature col-md-4" *ngFor="let food of foodList$">
+              <div class="p-2 card">
+                <div class="feature-food-icon">
+                  <img src="assets/images/online-payment.svg">
+                </div>
+                <h4 class="feature-title h3-mobile mb-8">Bangladeshi Food</h4>
+                <p class="tags">
+                  <span class="badge badge-primary">tag1</span>
+                  <span class="badge badge-secondary">tag2</span>
+                  <span class="badge badge-success">tag3</span>
+                  <span class="badge badge-danger">tag4</span>
+                  <span class="badge badge-warning">tag5</span>
+                  <span class="badge badge-info">tag6</span>
+                  <span class="badge badge-light">tag7</span>
+                  <span class="badge badge-dark">tag8</span>
+                </p>
+                <p class="sb-text-cancel"><b>Dine together</b> with your colleagues, organize your next
+                  <b>meeting</b> or set up a big <b>event</b>: we got you covered.</p>
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+                <div class="card-body">
+                  <button class="btn btn-danger btn-space" (click)="addToCard(food)">Add to cart <span
+                    class="fa fa-cart-plus"></span></button>
+                  <!--                <button class="btn btn-danger">Order now <span class="fa fa-arrow-right"></span></button>-->
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
