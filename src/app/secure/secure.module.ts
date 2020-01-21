@@ -8,6 +8,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {OrderCartComponent} from './order-cart/order-cart.component';
 import {OrderListComponent} from './order-list/order-list.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
+import {SwiperModule} from '../common/swiper/swiper.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {ChangePasswordComponent} from './change-password/change-password.compone
   ],
   imports: [
     CommonModule,
-    SecureRoutingModule
+    SecureRoutingModule,
+    SwiperModule
   ]
 })
 export class SecureModule {
