@@ -29,7 +29,7 @@ export class KitchenListComponent implements OnInit {
   }
 
   goToFoodList(kitchen) {
-    this.router.navigateByUrl(`secure/${kitchen.id}/foods`)
+    this.router.navigateByUrl(`secure/dashboard/${kitchen.id}/foods`)
       .then(() => console.log('Go to food page for', kitchen));
   }
 

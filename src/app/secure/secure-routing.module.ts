@@ -24,7 +24,7 @@ const routes: Routes = [
         component: DashboardComponent,
       },
       {
-        path: ':kitchen_id/foods',
+        path: 'dashboard/:kitchen_id/foods',
         component: FoodListComponent
       },
       {
