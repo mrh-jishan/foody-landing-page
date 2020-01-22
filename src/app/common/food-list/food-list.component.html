@@ -11,22 +11,25 @@
 <div class="row">
   <div class="col-lg-6 my-1" *ngFor="let x of foodList$">
     <div class="card">
-      <div class="media p-3">
+      <div class="media p-2">
         <div class="media-body d-flex">
           <div class="figure-img">
             <img src="https://images-na.ssl-images-amazon.com/images/I/61UXPmnTC9L._SL1024_.jpg"
-                 width="50">
+                 width="60">
           </div>
-          <div class="text-left pl-2">
+          <div class="text-left px-3 w-100">
             <p class="m-0">Apple iPhone XS (Silver, 64 GB)</p>
             <small class="font-italic text-muted m-0">Indian, Halal | Raffels Place, Singapore</small>
             <p class="m-0 small">
-              <span class="fa fa-star text-success"></span> 3.5 
+              <span class="fa fa-star text-success"></span> 3.5
               <span class="fa fa-clock-o text-info"></span> 1 Km away
             </p>
+            <div class="py-2 d-flex justify-content-end">
+              <button class="btn btn-danger btn-sm">View Kitchen</button>
+            </div>
           </div>
         </div>
-      </div> <!-- End -->
+      </div>
     </div>
   </div>
 </div>
