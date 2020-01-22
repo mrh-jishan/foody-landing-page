@@ -9,7 +9,7 @@ import {OrderCartComponent} from './order-cart/order-cart.component';
 import {OrderListComponent} from './order-list/order-list.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
 import {SwiperModule} from '../common/swiper/swiper.module';
-import {FoodListModule} from '../common/food-list/food-list.module';
+import {KitchenListModule} from '../common/kitchen-list/kitchen-list.module';
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import {FoodListModule} from '../common/food-list/food-list.module';
     CommonModule,
     SecureRoutingModule,
     SwiperModule,
-    FoodListModule
+    KitchenListModule
   ]
 })
 export class SecureModule {
