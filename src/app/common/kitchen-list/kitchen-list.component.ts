@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-kitchen-list',
@@ -7,12 +8,29 @@ import {Component, OnInit} from '@angular/core';
 })
 export class KitchenListComponent implements OnInit {
 
-  foodList$ = Array(5);
+  kitchenList$ = [{
+    id: 1,
+    name: 'test',
+    price: 100
+  }, {
+    id: 2,
+    name: 'test',
+    price: 100
+  }, {
+    id: 3,
+    name: 'test',
+    price: 100
+  }];
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
+  }
+
+  goToFoodList(kitchen) {
+    this.router.navigateByUrl(`secure/${kitchen.id}/foods`)
+      .then(() => console.log('Go to food page for', kitchen));
   }
 
 }

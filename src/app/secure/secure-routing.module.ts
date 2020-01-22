@@ -6,6 +6,7 @@ import {ProfileComponent} from './profile/profile.component';
 import {OrderCartComponent} from './order-cart/order-cart.component';
 import {OrderListComponent} from './order-list/order-list.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
+import {FoodListComponent} from './food-list/food-list.component';
 
 
 const routes: Routes = [
@@ -20,8 +21,13 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        component: DashboardComponent
-      }, {
+        component: DashboardComponent,
+      },
+      {
+        path: ':kitchen_id/foods',
+        component: FoodListComponent
+      },
+      {
         path: 'profile',
         component: ProfileComponent
       },

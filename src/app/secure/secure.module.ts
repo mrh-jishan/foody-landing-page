@@ -10,6 +10,7 @@ import {OrderListComponent} from './order-list/order-list.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
 import {SwiperModule} from '../common/swiper/swiper.module';
 import {KitchenListModule} from '../common/kitchen-list/kitchen-list.module';
+import { FoodListComponent } from './food-list/food-list.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {KitchenListModule} from '../common/kitchen-list/kitchen-list.module';
     DashboardComponent,
     OrderCartComponent,
     OrderListComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    FoodListComponent
   ],
   imports: [
     CommonModule,
