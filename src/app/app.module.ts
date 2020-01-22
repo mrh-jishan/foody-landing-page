@@ -7,7 +7,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {MessageModalModule} from './common/message-modal/message-modal.module';
 import {ModalDialogModule} from 'ngx-modal-dialog';
-import {FoodItemModule} from './common/food-item/food-item.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import {FoodItemModule} from './common/food-item/food-item.module';
     HttpClientModule,
     ReactiveFormsModule,
     MessageModalModule,
-    FoodItemModule,
     ModalDialogModule.forRoot()
   ],
   providers: [],

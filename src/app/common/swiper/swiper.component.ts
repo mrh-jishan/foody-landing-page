@@ -12,7 +12,7 @@ export class SwiperComponent implements OnInit {
       el: '.swiper-pagination',
       clickable: true
     },
-    slidesPerView: 6,
+    slidesPerView: 4,
     spaceBetween: 1,
     freeMode: true
   };

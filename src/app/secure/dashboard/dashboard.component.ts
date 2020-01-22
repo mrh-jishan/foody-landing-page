@@ -1,10 +1,8 @@
 import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {FoodListService} from '../../service/food-list.service';
 import {ModalDialogService} from 'ngx-modal-dialog';
-import {FoodItemComponent} from '../../common/food-item/food-item.component';
 import {noop} from 'rxjs';
 import {tap} from 'rxjs/operators';
-import {DASHBOARD_PATH, LOCAL_STORAGE_TOKEN_KEY} from '../../service/constant';
 
 @Component({
   selector: 'app-dashboard',
@@ -33,12 +31,12 @@ export class DashboardComponent implements OnInit {
   }
 
   addToCard(food) {
-    this.modalService.openDialog(this.viewRef, {
-      data: food,
-      title: 'TEST FOOD',
-      childComponent: FoodItemComponent,
-      actionButtons: [{text: 'Close'}]
-    });
+    // this.modalService.openDialog(this.viewRef, {
+    //   data: food,
+    //   title: 'TEST FOOD',
+    //   childComponent: FoodItemComponent,
+    //   actionButtons: [{text: 'Close'}]
+    // });
   }
 
 }
