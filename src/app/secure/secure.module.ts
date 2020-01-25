@@ -9,13 +9,12 @@ import {OrderCartComponent} from './order-cart/order-cart.component';
 import {OrderListComponent} from './order-list/order-list.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
 import {SwiperModule} from '../common/swiper/swiper.module';
-import {KitchenListModule} from '../common/kitchen-list/kitchen-list.module';
-import { FoodListComponent } from './food-list/food-list.component';
-import { AddKitchenComponent } from './add-kitchen/add-kitchen.component';
+import {FoodListComponent} from './food-list/food-list.component';
+import {AddKitchenComponent} from './add-kitchen/add-kitchen.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { MyKitchenComponent } from './my-kitchen/my-kitchen.component';
+import {MyKitchenComponent} from './my-kitchen/my-kitchen.component';
 import {KitchenCardModule} from '../common/kitchen-card/kitchen-card.module';
-import { MyFoodComponent } from './my-food/my-food.component';
+import {MyFoodComponent} from './my-food/my-food.component';
 
 
 @NgModule({
@@ -35,7 +34,6 @@ import { MyFoodComponent } from './my-food/my-food.component';
     CommonModule,
     SecureRoutingModule,
     SwiperModule,
-    KitchenListModule,
     ReactiveFormsModule,
     KitchenCardModule
   ]

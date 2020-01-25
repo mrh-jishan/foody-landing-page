@@ -33,7 +33,6 @@ export class MyKitchenComponent implements OnInit {
             description: kitchen.description,
             tags: kitchen.tags.map((tag: Tag) => ({name: tag.name})),
             kitchen_address: {
-              kitchen_id: kitchen.kitchen_address.kitchen_id,
               address: kitchen.kitchen_address.address,
               city: kitchen.kitchen_address.city,
               state: kitchen.kitchen_address.state,

@@ -9,7 +9,6 @@ export interface User {
 }
 
 export interface KitchenAddress {
-  kitchen_id: number;
   address: string;
   city: string;
   state: string;
