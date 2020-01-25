@@ -5,14 +5,14 @@
            width="60">
     </div>
     <div class="text-left px-3 w-100">
-      <p class="m-0">Apple iPhone XS (Silver, 64 GB)</p>
+      <p class="m-0">{{kitchen.name}}</p>
       <p class="m-0 small tags">
-        <span class="badge badge-primary">Indian</span>
-        <span class="badge badge-secondary">Halal</span>
-        <span class="badge badge-success">Home-Cook</span>
+        <span class="badge badge-info" *ngFor="let tag of kitchen.tags">{{tag.name}}</span>
       </p>
       <p class="m-0 small">
-        <span class="fa fa-location-arrow text-danger"></span> Raffels Place, Singapore
+        <span
+          class="fa fa-location-arrow text-warning"></span> {{kitchen.kitchen_address.address}}, {{kitchen.kitchen_address.city}}, {{kitchen.kitchen_address.state}}
+        - {{kitchen.kitchen_address.zip_code}}
       </p>
       <p class="m-0 small">
         <span class="fa fa-star text-success"></span> 3.5

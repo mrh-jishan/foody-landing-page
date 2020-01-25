@@ -13,6 +13,9 @@ import {KitchenListModule} from '../common/kitchen-list/kitchen-list.module';
 import { FoodListComponent } from './food-list/food-list.component';
 import { AddKitchenComponent } from './add-kitchen/add-kitchen.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { MyKitchenComponent } from './my-kitchen/my-kitchen.component';
+import {KitchenCardModule} from '../common/kitchen-card/kitchen-card.module';
+import { MyFoodComponent } from './my-food/my-food.component';
 
 
 @NgModule({
@@ -24,14 +27,17 @@ import {ReactiveFormsModule} from '@angular/forms';
     OrderListComponent,
     ChangePasswordComponent,
     FoodListComponent,
-    AddKitchenComponent
+    AddKitchenComponent,
+    MyKitchenComponent,
+    MyFoodComponent
   ],
   imports: [
     CommonModule,
     SecureRoutingModule,
     SwiperModule,
     KitchenListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    KitchenCardModule
   ]
 })
 export class SecureModule {

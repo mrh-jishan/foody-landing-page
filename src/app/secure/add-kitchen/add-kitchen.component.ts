@@ -62,23 +62,29 @@ export class AddKitchenComponent implements OnInit {
 
   add_kitchen() {
     this.kitchenService.add_kitchen({kitchen: this.kitchenForm.value}).pipe(tap((res: any) => {
-      this.openNewDialog('Kitchen added successfully');
+      this.openNewDialog('Kitchen added successfully', true);
     })).subscribe(noop, err => {
-      console.log(err);
+      this.openNewDialog('Sorry! Something went wrong.');
     });
   }
 
 
-  openNewDialog(message) {
+  openNewDialog(message, success = false) {
     this.modalService.openDialog(this.viewRef, {
       data: message,
       title: 'Message',
       childComponent: MessageModalComponent,
+      settings: {contentClass: 'modal-content w-350'},
       actionButtons: [{
         text: 'Ok',
-        onAction: () => this.router.navigateByUrl(DASHBOARD_PATH).then(() => console.log('redirect to dashboard'))
-      }],
-      settings: {contentClass: 'modal-content w-350'}
+        onAction: () => {
+          if (success) {
+            this.router.navigateByUrl(DASHBOARD_PATH).then(() => console.log('redirect to dashboard'));
+          } else {
+            return true;
+          }
+        }
+      }]
     });
   }
 }

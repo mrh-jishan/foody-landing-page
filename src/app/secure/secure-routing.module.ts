@@ -8,6 +8,8 @@ import {OrderListComponent} from './order-list/order-list.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
 import {FoodListComponent} from './food-list/food-list.component';
 import {AddKitchenComponent} from './add-kitchen/add-kitchen.component';
+import {MyKitchenComponent} from './my-kitchen/my-kitchen.component';
+import {MyFoodComponent} from './my-food/my-food.component';
 
 
 const routes: Routes = [
@@ -47,6 +49,14 @@ const routes: Routes = [
       {
         path: 'add-kitchen',
         component: AddKitchenComponent
+      },
+      {
+        path: 'my-kitchen',
+        component: MyKitchenComponent
+      },
+      {
+        path: 'my-kitchen/:id/food',
+        component: MyFoodComponent
       }
     ]
   }

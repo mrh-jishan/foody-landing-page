@@ -16,4 +16,10 @@ export class KitchenService {
     return this.http.post(`${environment.api.host}/api/v1/user/kitchen`, body,
       {headers: new HttpHeaders({Authorization: localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY)})});
   }
+
+
+  my_kitchen(): Observable<any> {
+    return this.http.get(`${environment.api.host}/api/v1/user/kitchen`,
+      {headers: new HttpHeaders({Authorization: localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY)})});
+  }
 }
