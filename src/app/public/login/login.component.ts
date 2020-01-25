@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
       data: message,
       title: 'Message',
       childComponent: MessageModalComponent,
-      actionButtons: [{text: 'Close'}],
+      actionButtons: [{text: 'Ok'}],
       settings: {contentClass: 'modal-content w-350'}
     });
   }

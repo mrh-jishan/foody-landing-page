@@ -337,7 +337,7 @@ label {
 }
 
 @media (max-width: 978px) {
-  .container, .container-fluid {
+  .container {
     padding: 0;
     margin: 0;
   }
@@ -345,4 +345,13 @@ label {
   body {
     padding: 0;
   }
+}
+
+.sb-app-c6 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+section {
+  padding: 5rem 0;
 }

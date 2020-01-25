@@ -15,6 +15,7 @@ export class MessageModalComponent implements OnInit, IModalDialog {
 
   dialogInit(reference: ComponentRef<IModalDialog>,
              options: Partial<IModalDialogOptions<string>>) {
+    console.log('modal data: ', options.data);
     this.message = options.data;
   }
 

@@ -7,6 +7,7 @@ import {OrderCartComponent} from './order-cart/order-cart.component';
 import {OrderListComponent} from './order-list/order-list.component';
 import {ChangePasswordComponent} from './change-password/change-password.component';
 import {FoodListComponent} from './food-list/food-list.component';
+import {AddKitchenComponent} from './add-kitchen/add-kitchen.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
       {
         path: 'change-password',
         component: ChangePasswordComponent
+      },
+      {
+        path: 'add-kitchen',
+        component: AddKitchenComponent
       }
     ]
   }

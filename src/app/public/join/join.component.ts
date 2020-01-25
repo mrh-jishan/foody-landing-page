@@ -56,19 +56,27 @@ export class JoinComponent implements OnInit {
     };
 
     this.auth.join(body).pipe(tap(user => {
-      this.router.navigateByUrl(LOGIN_PATH).then(t => console.log('redirect to login path'));
+      this.openNewDialog('Registration successful. Please check your email for verification.', true);
     })).subscribe(noop, (err: any) => {
       console.log(err);
       this.openNewDialog(err.error.data);
     });
   }
 
-  openNewDialog(message) {
+  openNewDialog(message, success = false) {
     this.modalService.openDialog(this.viewRef, {
       data: message,
       title: 'Message',
       childComponent: MessageModalComponent,
-      actionButtons: [{text: 'Close'}],
+      actionButtons: [{
+        text: 'Ok', onAction: () => {
+          if (success) {
+            this.router.navigateByUrl(LOGIN_PATH).then(t => console.log('redirect to login path'));
+          } else {
+            return true;
+          }
+        }
+      }],
       settings: {contentClass: 'modal-content w-350'}
     });
   }

@@ -11,6 +11,8 @@ import {ChangePasswordComponent} from './change-password/change-password.compone
 import {SwiperModule} from '../common/swiper/swiper.module';
 import {KitchenListModule} from '../common/kitchen-list/kitchen-list.module';
 import { FoodListComponent } from './food-list/food-list.component';
+import { AddKitchenComponent } from './add-kitchen/add-kitchen.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -21,13 +23,15 @@ import { FoodListComponent } from './food-list/food-list.component';
     OrderCartComponent,
     OrderListComponent,
     ChangePasswordComponent,
-    FoodListComponent
+    FoodListComponent,
+    AddKitchenComponent
   ],
   imports: [
     CommonModule,
     SecureRoutingModule,
     SwiperModule,
-    KitchenListModule
+    KitchenListModule,
+    ReactiveFormsModule
   ]
 })
 export class SecureModule {
