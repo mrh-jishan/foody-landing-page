@@ -12,8 +12,7 @@ import {tap} from 'rxjs/operators';
 })
 export class ForgetPasswordComponent implements OnInit {
 
-  loginFrom: FormGroup;
-  $user: Observable<any>;
+  forgetPasswordFrom: FormGroup;
 
   constructor(private router: Router,
               private fb: FormBuilder,
@@ -21,21 +20,17 @@ export class ForgetPasswordComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loginFrom = this.fb.group({
-      email: ['', Validators.compose([Validators.required])],
-      password: ['', Validators.compose([Validators.required])]
+    this.forgetPasswordFrom = this.fb.group({
+      email: ['', Validators.compose([Validators.required])]
     });
   }
 
-  login() {
-    const value = this.loginFrom.value;
-    const body = {
+  submit() {
+    this.auth.login({
       auth: {
-        password: value.password,
-        email: value.email
+        email: this.forgetPasswordFrom.value.email
       }
-    };
-    this.auth.login(body).pipe(
+    }).pipe(
       tap(user => {
         console.log(user);
         this.router.navigateByUrl('/secure/dashboard');

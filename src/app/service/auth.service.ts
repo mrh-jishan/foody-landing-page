@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {BehaviorSubject} from 'rxjs';
 import {User} from './model';
+import {DASHBOARD_PATH, LOCAL_STORAGE_TOKEN_KEY} from './constant';
+import {tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +19,10 @@ export class AuthService {
   }
 
   login(body) {
-    return this.http.post(`${environment.api.host}/api/v1/auth`, body);
+    return this.http.post(`${environment.api.host}/api/v1/auth`, body)
+      .pipe(tap((user: any) => localStorage.setItem(LOCAL_STORAGE_TOKEN_KEY, user.data.token)));
   }
+
 
   update_user(user: any) {
     this.user = user;

@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     };
     this.auth.login(body).pipe(tap((user: any) => {
       this.auth.update_user(user.data.user);
-      this.router.navigateByUrl(DASHBOARD_PATH).then(r => localStorage.setItem(LOCAL_STORAGE_TOKEN_KEY, user.data.token));
+      this.router.navigateByUrl(DASHBOARD_PATH).then(() => console.log('login success, go to dashboard'));
     })).subscribe(noop, (err) => {
       this.openNewDialog(err.error.message);
     });
