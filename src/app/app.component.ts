@@ -1,5 +1,5 @@
-import {Component, HostListener} from '@angular/core';
-import {HOME_PATH, LOCAL_STORAGE_TOKEN_KEY, LOGIN_PATH} from './service/constant';
+import {Component} from '@angular/core';
+import {LOCAL_STORAGE_TOKEN_KEY} from './service/constant';
 import {Router} from '@angular/router';
 import {AuthService} from './service/auth.service';
 import {UserService} from './service/user.service';
@@ -12,9 +12,6 @@ import {tap} from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-  goToTopShow = false;
-
   constructor(private router: Router,
               private auth: AuthService,
               private userService: UserService) {
@@ -36,21 +33,5 @@ export class AppComponent {
         // this.router.navigateByUrl(LOGIN_PATH).then(r => localStorage.clear());
       });
     }
-  }
-
-  onActivate(event) {
-    const scrollToTop = window.setInterval(() => {
-      const pos = window.pageYOffset;
-      if (pos > 0) {
-        window.scrollTo(0, pos - 20); // how far to scroll on each step
-      } else {
-        window.clearInterval(scrollToTop);
-      }
-    }, 16);
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  onScroll(event) {
-    this.goToTopShow = window.scrollY < window.innerHeight;
   }
 }
