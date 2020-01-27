@@ -1,0 +1,21 @@
+.kitchen-title {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  .left {
+    text-align: left;
+
+    h6 {
+      margin-bottom: 0;
+    }
+  }
+
+  .right {
+    padding-right: 10px;
+
+    a {
+      font-size: 12px;
+    }
+  }
+}

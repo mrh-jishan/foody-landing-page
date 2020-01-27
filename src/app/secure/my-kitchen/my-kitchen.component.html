@@ -1,8 +1,18 @@
-<div class="row">
-  <div class="col-lg-6 my-1" *ngFor="let kitchen of kitchens$ | async">
-    <app-kitchen-card class="card h-card" [kitchen]="kitchen" (click)="goToFood(kitchen)"></app-kitchen-card>
+<div class="card">
+  <div class="card-header">
+    <div class="kitchen-title">
+      <div class="left text-dark">
+        <h6>Your kitchen list</h6>
+      </div>
+      <div class="right text-secondary">
+        <a routerLink="/secure/add-kitchen" class="text-danger">Add new Kitchen</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 my-1" *ngFor="let kitchen of kitchens$ | async">
+      <app-kitchen-card class="card h-card" [kitchen]="kitchen" (click)="goToFood(kitchen)"></app-kitchen-card>
+    </div>
   </div>
 </div>
-
-
-

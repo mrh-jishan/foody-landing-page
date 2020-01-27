@@ -15,6 +15,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MyKitchenComponent} from './my-kitchen/my-kitchen.component';
 import {KitchenCardModule} from '../common/kitchen-card/kitchen-card.module';
 import {MyFoodComponent} from './my-food/my-food.component';
+import { AddFoodComponent } from './add-food/add-food.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {MyFoodComponent} from './my-food/my-food.component';
     FoodListComponent,
     AddKitchenComponent,
     MyKitchenComponent,
-    MyFoodComponent
+    MyFoodComponent,
+    AddFoodComponent
   ],
   imports: [
     CommonModule,

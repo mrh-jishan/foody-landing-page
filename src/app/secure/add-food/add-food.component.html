@@ -1,0 +1,107 @@
+<div class="card">
+  <div class="card-header">
+    Add Food to your kitchen
+  </div>
+  <div class="card-body">
+    <form [formGroup]="kitchenForm">
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Kitchen Name <sup>*</sup></label>
+          <input type="text" class="form-control" placeholder="name" formControlName="name">
+          <small class="text-danger" *ngIf="kitchenForm.get('name').invalid && kitchenForm.get('name').touched">Please
+            enter name.</small>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Kitchen Title <sup>*</sup></label>
+          <input type="text" class="form-control" placeholder="title" formControlName="title">
+          <small class="text-danger" *ngIf="kitchenForm.get('title').invalid && kitchenForm.get('title').touched">Please
+            enter title.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Kitchen Description <sup>*</sup></label>
+        <textarea class="form-control" placeholder="description" formControlName="description"></textarea>
+        <small class="text-danger"
+               *ngIf="kitchenForm.get('description').invalid && kitchenForm.get('description').touched">Please
+          enter description (min-30).</small>
+      </div>
+
+
+      <div class="form-row">
+        <label>Kitchen Tags <sup>*</sup></label>
+        <div class="form-group col-md-12">
+          <button class="btn btn-sm btn-success" (click)="addTags()">
+            <span class="fa fa-plus-square"></span> Tags
+          </button>
+        </div>
+
+        <div class="form-group col-md-12">
+          <div formArrayName="tags_attributes" *ngFor="let tags_attributes of tags.controls; let i = index"
+               class="pt-1">
+            <div [formGroupName]="i">
+              <div class="input-group tag-input">
+                <input type="text" class="form-control" placeholder="tag" formControlName="name"/>
+                <div class="input-group-btn">
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn btn-danger" (click)="removeTag(i)">
+                      <span class="fa fa-close" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <small class="text-danger"
+                   *ngIf="tags_attributes.get('name').invalid && tags_attributes.get('name').touched">Please
+              enter tag.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" formGroupName="kitchen_address_attributes">
+        <div class="card-header">
+          Kitchen Address
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label>Address <sup>*</sup></label>
+            <textarea type="text" class="form-control" placeholder="1234 Main St" formControlName="address"></textarea>
+            <small class="text-danger" *ngIf="address.get('address').invalid && address.get('address').touched">Please
+              enter address.</small>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>City <sup>*</sup></label>
+              <input type="text" class="form-control" formControlName="city">
+              <small class="text-danger" *ngIf="address.get('city').invalid && address.get('city').touched">Please
+                enter city.</small>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label>State <sup>*</sup></label>
+              <select class="form-control" formControlName="state">
+                <option *ngFor="let state of states" [value]="state.key">{{state.value}}</option>
+              </select>
+              <small class="text-danger" *ngIf="address.get('state').invalid && address.get('state').touched">Please
+                select a state.</small>
+            </div>
+
+            <div class="form-group col-md-2">
+              <label>Zip <sup>*</sup></label>
+              <input type="text" class="form-control" formControlName="zip_code">
+              <small class="text-danger" *ngIf="address.get('zip_code').invalid && address.get('zip_code').touched">Please
+                enter postal code.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row pull-right pt-3">
+        <button type="submit" class="btn btn-primary" (click)="add_kitchen()" [disabled]="kitchenForm.invalid">Add
+          Kitchen
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

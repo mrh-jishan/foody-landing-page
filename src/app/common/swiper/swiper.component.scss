@@ -23,12 +23,12 @@
 
 swiper {
   height: 200px;
+  //display: table;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #add8e6;
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -48,3 +48,10 @@ swiper {
 .swiper-wrapper {
   box-sizing: border-box !important;
 }
+
+
+a.swiper-link:hover {
+  text-decoration: none !important;
+}
+
+

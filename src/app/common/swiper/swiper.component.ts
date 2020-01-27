@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SwiperOptions} from 'swiper';
 
 @Component({
@@ -13,11 +13,110 @@ export class SwiperComponent implements OnInit {
       clickable: true
     },
     slidesPerView: 4,
-    spaceBetween: 1,
+    spaceBetween: 4,
     freeMode: true
   };
 
+  @Input() swiperItem: any[];
+
   constructor() {
+    this.swiperItem = [
+      {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      },
+      {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      },
+      {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      },
+      {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      },
+      {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      }, {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      }, {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      }, {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      }, {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      }, {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      }, {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      }, {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      }, {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      }, {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      }, {
+        id: 1,
+        url: '/secure/add-kitchen',
+        img: '',
+        price: '',
+        type: ''
+      }
+    ];
   }
 
   ngOnInit() {
