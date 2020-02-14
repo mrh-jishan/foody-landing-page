@@ -1,10 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {SwiperOptions} from 'swiper';
 
 @Component({
   selector: 'app-swiper',
   templateUrl: './swiper.component.html',
-  styleUrls: ['./swiper.component.scss']
+  styleUrls: ['./swiper.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SwiperComponent implements OnInit {
   config: SwiperOptions = {

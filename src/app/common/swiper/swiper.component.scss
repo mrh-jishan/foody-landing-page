@@ -22,7 +22,7 @@
 }
 
 swiper {
-  height: 200px;
+  height: auto;
   //display: table;
 }
 
@@ -55,3 +55,10 @@ a.swiper-link:hover {
 }
 
 
+.swiper-wrapper {
+  height: auto !important;
+}
+
+.swiper-container {
+  overflow: visible !important;
+}
