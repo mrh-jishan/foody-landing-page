@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {pipe} from 'rxjs';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-my-food',
@@ -17,4 +19,8 @@ export class MyFoodComponent implements OnInit {
     this.kitchen = this.route.snapshot.data.foods.data.kitchen;
   }
 
+
+  goToFoodMenu() {
+    return this.route.paramMap.pipe(map((paramMap: any) => paramMap.params.id));
+  }
 }
