@@ -47,7 +47,10 @@ const routes: Routes = [
       {
         path: 'email-confirm/:code',
         component: ConfirmEmailComponent,
-        resolve: {user: AuthResolverService}
+        resolve:
+          {
+            user: AuthResolverService
+          }
       }
     ]
   }

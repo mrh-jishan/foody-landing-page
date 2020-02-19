@@ -3,19 +3,19 @@
     Add Food to your kitchen
   </div>
   <div class="card-body">
-    <form [formGroup]="kitchenForm">
+    <form [formGroup]="foodForm">
 
       <div class="form-row">
         <div class="form-group col-md-6">
           <label>Kitchen Name <sup>*</sup></label>
           <input type="text" class="form-control" placeholder="name" formControlName="name">
-          <small class="text-danger" *ngIf="kitchenForm.get('name').invalid && kitchenForm.get('name').touched">Please
+          <small class="text-danger" *ngIf="foodForm.get('name').invalid && foodForm.get('name').touched">Please
             enter name.</small>
         </div>
         <div class="form-group col-md-6">
           <label>Kitchen Title <sup>*</sup></label>
           <input type="text" class="form-control" placeholder="title" formControlName="title">
-          <small class="text-danger" *ngIf="kitchenForm.get('title').invalid && kitchenForm.get('title').touched">Please
+          <small class="text-danger" *ngIf="foodForm.get('title').invalid && foodForm.get('title').touched">Please
             enter title.</small>
         </div>
       </div>
@@ -24,7 +24,7 @@
         <label>Kitchen Description <sup>*</sup></label>
         <textarea class="form-control" placeholder="description" formControlName="description"></textarea>
         <small class="text-danger"
-               *ngIf="kitchenForm.get('description').invalid && kitchenForm.get('description').touched">Please
+               *ngIf="foodForm.get('description').invalid && foodForm.get('description').touched">Please
           enter description (min-30).</small>
       </div>
 
@@ -98,7 +98,7 @@
         </div>
       </div>
       <div class="form-row pull-right pt-3">
-        <button type="submit" class="btn btn-primary" (click)="add_kitchen()" [disabled]="kitchenForm.invalid">Add
+        <button type="submit" class="btn btn-primary" (click)="add_food()" [disabled]="foodForm.invalid">Add
           Kitchen
         </button>
       </div>

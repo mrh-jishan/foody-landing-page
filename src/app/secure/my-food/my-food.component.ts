@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-my-food',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyFoodComponent implements OnInit {
 
-  constructor() { }
+  kitchen: any;
+
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    this.kitchen = this.route.snapshot.data.foods.data.kitchen;
   }
 
 }

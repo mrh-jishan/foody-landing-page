@@ -11,6 +11,7 @@ import {AddKitchenComponent} from './add-kitchen/add-kitchen.component';
 import {MyKitchenComponent} from './my-kitchen/my-kitchen.component';
 import {MyFoodComponent} from './my-food/my-food.component';
 import {AddFoodComponent} from './add-food/add-food.component';
+import {FoodResolverService} from '../service/food-resolver.service';
 
 
 const routes: Routes = [
@@ -57,7 +58,8 @@ const routes: Routes = [
       },
       {
         path: 'my-kitchen/:id/food',
-        component: MyFoodComponent
+        component: MyFoodComponent,
+        resolve: {foods: FoodResolverService}
       }, {
         path: 'my-kitchen/:id/add-food',
         component: AddFoodComponent
