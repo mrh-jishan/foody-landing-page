@@ -1,20 +1,8 @@
-<section class="features section text-center sb-app-c6">
-
+<div class="features text-center">
   <div class="card">
     <div class="card-header">
-
-      Kitchen - Test
-      <!--      <div class="input-group adv-search">-->
-      <!--        <input type="text" class="form-control" placeholder="Find your location"/>-->
-      <!--        <div class="input-group-btn">-->
-      <!--          <div class="btn-group" role="group">-->
-      <!--            <button type="button" class="btn btn-primary">-->
-      <!--              <span class="fa fa-location-arrow" aria-hidden="true"></span>-->
-      <!--            </button>-->
-      <!--          </div>-->
-      <!--        </div>-->
-      <!--      </div>-->
-
+      <span class="text-danger">{{kitchen.name | uppercase}}</span> - <span
+      class="text-secondary">{{kitchen.title | titlecase}}</span>
     </div>
     <div class="card-body">
       <div class="card-title">
@@ -29,12 +17,38 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="feature col-md-12">
-          Food LIST VIEW
-        </div>
 
+      <div class="row">
+        <div class="col-lg-6 my-1" *ngFor="let food of kitchen.foods">
+          <div class="card  h-card media p-2">
+            <div class="media-body d-flex">
+              <div class="figure-img">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/61UXPmnTC9L._SL1024_.jpg"
+                     width="60">
+              </div>
+              <div class="text-left px-3 w-100">
+                <p class="m-0">
+                  <span class="text-danger">{{food.name | titlecase}}</span> -
+                  <small class="text-secondary font-italic">{{food.category | lowercase}}</small>
+                </p>
+
+                <p class="my-1 small ingredients">
+                    <span class="badge badge-info"
+                          *ngFor="let ingredient of food.ingredients">{{ingredient.name}}</span>
+                </p>
+
+                <p class="m-0 small">
+                  <span class="fa fa-money text-success"></span> {{food.price | currency}}
+                </p>
+
+                <p class="m-0 small">
+                  <span class="fa fa-info-circle text-secondary"></span> {{food.description}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>
+</div>

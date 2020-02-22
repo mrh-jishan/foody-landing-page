@@ -29,8 +29,9 @@ const routes: Routes = [
         component: DashboardComponent,
       },
       {
-        path: 'dashboard/:kitchen_id/foods',
-        component: FoodListComponent
+        path: 'dashboard/:id/foods',
+        component: FoodListComponent,
+        resolve: {foods: FoodResolverService}
       },
       {
         path: 'profile',
