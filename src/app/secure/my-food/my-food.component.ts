@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {pipe} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 @Component({

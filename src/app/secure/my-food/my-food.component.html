@@ -34,50 +34,43 @@
       <div class="feature col-md-12">
         <div class="food-list-title">
           <div class="left text-dark">
-            <h6>More Kitchens</h6>
-            <small class="text-secondary">We have got you covered</small>
+            <h6>More Foods</h6>
+            <small class="text-secondary">Food list in your kitchen</small>
           </div>
-          <div class="right text-secondary">
-            <a href="#">View all</a>
-          </div>
+          <!--          <div class="right text-secondary">-->
+          <!--            <a href="#">View all</a>-->
+          <!--          </div>-->
         </div>
 
         <div class="row">
-          <div class="col-lg-6 my-1" *ngFor="let food of kitchen.foods ">
-            <div class="media p-2">
+          <div class="col-lg-6 my-1" *ngFor="let food of kitchen.foods">
+            <div class="card  h-card media p-2">
               <div class="media-body d-flex">
                 <div class="figure-img">
                   <img src="https://images-na.ssl-images-amazon.com/images/I/61UXPmnTC9L._SL1024_.jpg"
                        width="60">
                 </div>
                 <div class="text-left px-3 w-100">
-                  <p class="m-0">{{food.name}}</p>
+                  <p class="m-0">
+                    <span class="text-danger">{{food.name | titlecase}}</span> -
+                    <small class="text-secondary font-italic">{{food.category | lowercase}}</small>
+                  </p>
 
-                  <p class="m-0 small ingredients">
+                  <p class="my-1 small ingredients">
                     <span class="badge badge-info"
                           *ngFor="let ingredient of food.ingredients">{{ingredient.name}}</span>
                   </p>
 
                   <p class="m-0 small">
-                    <span class="fa fa-star text-success"></span> {{food.category}}
-                  </p>
-                  <p class="m-0 small">
-                    <span class="fa fa-money text-danger"></span> {{food.price}}
-                  </p>
-                  <p class="m-0 small">
-                    <span class="fa fa-list text-info"></span> {{food.reciepe}}
+                    <span class="fa fa-money text-success"></span> {{food.price | currency}}
                   </p>
 
                   <p class="m-0 small">
-                    <span class="fa fa-info text-secondary"></span> {{food.description}}
+                    <span class="fa fa-info-circle text-secondary"></span> {{food.description}}
                   </p>
-                  <!--        <div class="py-2 d-flex justify-content-end">-->
-                  <!--          <button class="btn btn-danger btn-sm">View Kitchen</button>-->
-                  <!--        </div>-->
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
