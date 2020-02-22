@@ -6,24 +6,40 @@
     <form [formGroup]="foodForm">
 
       <div class="form-row">
-        <div class="form-group col-md-6">
+
+        <div class="form-group col-md-4">
           <label>Food Name <sup>*</sup></label>
           <input type="text" class="form-control" placeholder="name" formControlName="name">
           <small class="text-danger" *ngIf="foodForm.get('name').invalid && foodForm.get('name').touched">Please
             enter name.</small>
         </div>
 
-        <div class="form-group col-md-6">
-          <label>Food description <sup>*</sup></label>
-          <select formControlName="category">
-            <option>CAT1</option>
-            <option>CAT2</option>
-            <option>CAT3</option>
+
+        <div class="form-group col-md-4">
+          <label>Price <sup>*</sup></label>
+          <input type="number" class="form-control" placeholder="price" formControlName="price">
+          <small class="text-danger" *ngIf="foodForm.get('price').invalid &&
+           foodForm.get('price').touched">Please
+            enter price.</small>
+        </div>
+
+        <div class="form-group col-md-4">
+          <label>Food Category <sup>*</sup></label>
+          <select class="form-control" formControlName="category">
+            <option *ngFor="let category of foodCategory" [value]="category.key">{{category.value}}</option>
           </select>
-          <!--          <input type="text" class="form-control" placeholder="title" formControlName="title">-->
-          <small class="text-danger" *ngIf="foodForm.get('category').invalid && foodForm.get('category').touched">Please
+          <small class="text-danger" *ngIf="foodForm.get('category').invalid &&
+          foodForm.get('category').touched">Please
             enter category.</small>
         </div>
+      </div>
+
+      <div class="form-group">
+        <label>Food recipe <sup>*</sup></label>
+        <textarea class="form-control" placeholder="reciepe" formControlName="reciepe"></textarea>
+        <small class="text-danger"
+               *ngIf="foodForm.get('reciepe').invalid && foodForm.get('reciepe').touched">Please
+          enter reciepe (min-30).</small>
       </div>
 
       <div class="form-group">
@@ -36,7 +52,7 @@
 
 
       <div class="form-row">
-        <label>Kitchen Tags <sup>*</sup></label>
+        <label>Add Ingredient <sup>*</sup></label>
         <div class="form-group col-md-12">
           <button class="btn btn-sm btn-success" (click)="addIngredient()">
             <span class="fa fa-plus-square"></span> ingredient

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewContainerRef} from '@angular/core';
 import {KitchenService} from '../../service/kitchen.service';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DASHBOARD_PATH, STATES_BANGLADESH} from '../../service/constant';
@@ -13,7 +13,7 @@ import {ModalDialogService} from 'ngx-modal-dialog';
   templateUrl: './add-kitchen.component.html',
   styleUrls: ['./add-kitchen.component.scss']
 })
-export class AddKitchenComponent implements OnInit {
+export class AddKitchenComponent implements OnInit, AfterViewInit {
 
   kitchenForm: FormGroup;
   states = STATES_BANGLADESH;
@@ -36,7 +36,7 @@ export class AddKitchenComponent implements OnInit {
         state: ['', Validators.compose([Validators.required])],
         zip_code: ['', Validators.compose([Validators.required])]
       }),
-      tags_attributes: this.fb.array([])
+      tags_attributes: this.fb.array([], Validators.required)
     });
   }
 
@@ -86,5 +86,9 @@ export class AddKitchenComponent implements OnInit {
         }
       }]
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.addTags();
   }
 }

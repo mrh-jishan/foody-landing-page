@@ -13,3 +13,12 @@ export const STATES_BANGLADESH = [
   {key: 'SY', value: 'Sylhet (সিলেট Sylhet)'},
   {key: 'RG', value: 'Rangpur (রংপুর Rangpur)'}
 ];
+
+export const FOOD_CATEGORY = [
+  {key: 'BD', value: 'Bangladeshi Food'},
+  {key: 'ID', value: 'Indian Food'},
+  {key: 'PK', value: 'Pakistani Food'},
+  {key: 'WS', value: 'Western Food'},
+  {key: 'T&V', value: 'Thai & Vietnam Food'},
+  {key: 'AR', value: 'Arabian Food'}
+];

@@ -1,40 +1,42 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewContainerRef} from '@angular/core';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {DASHBOARD_PATH, STATES_BANGLADESH} from '../../service/constant';
+import {FOOD_CATEGORY} from '../../service/constant';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ModalDialogService} from 'ngx-modal-dialog';
 import {MessageModalComponent} from '../../common/message-modal/message-modal.component';
 import {FoodService} from '../../service/food.service';
-import {map, switchMap, tap} from 'rxjs/operators';
+import {switchMap, tap} from 'rxjs/operators';
 import {noop} from 'rxjs';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-add-food',
   templateUrl: './add-food.component.html',
   styleUrls: ['./add-food.component.scss']
 })
-export class AddFoodComponent implements OnInit {
+export class AddFoodComponent implements OnInit, AfterViewInit {
 
   foodForm: FormGroup;
-  states = STATES_BANGLADESH;
+  foodCategory = FOOD_CATEGORY;
 
   constructor(private foodService: FoodService,
               private router: Router,
               private route: ActivatedRoute,
               private modalService: ModalDialogService,
               private viewRef: ViewContainerRef,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private location: Location) {
   }
 
   ngOnInit() {
     this.foodForm = this.fb.group({
 
-      name: ['name', Validators.compose([Validators.required])],
-      category: ['category', Validators.compose([Validators.required])],
-      description: ['dscp', Validators.compose([Validators.required])],
-      reciepe: ['test', Validators.compose([Validators.required])],
-      price: ['20', Validators.compose([Validators.required])],
-      ingredients_attributes: this.fb.array([])
+      name: ['', Validators.compose([Validators.required])],
+      category: ['', Validators.compose([Validators.required])],
+      description: ['', Validators.compose([Validators.required])],
+      reciepe: ['', Validators.compose([Validators.required])],
+      price: ['', Validators.compose([Validators.required])],
+      ingredients_attributes: this.fb.array([], Validators.required)
     });
   }
 
@@ -65,25 +67,11 @@ export class AddFoodComponent implements OnInit {
           }));
       }),
       tap((res: any) => {
-        console.log('food: ', res);
+        this.openNewDialog('Food added successfully', true);
       })
     ).subscribe(noop, err => {
       this.openNewDialog('Sorry! Something went wrong.');
     });
-
-    // this.openNewDialog('Kitchen added successfully', true);
-    // this.foodService.add_food({food: this.foodForm.value}, paramMap.params.id).pipe(tap((food: any) => {
-    //   console.log('RES', paramMap);
-    //   return food;
-    //   // this.openNewDialog('Kitchen added successfully', true);
-    // }));
-
-    // this.foodService.add_food({food: this.foodForm.value}, 1).pipe(tap((res: any) => {
-    //   console.log('RES', res);
-    //   // this.openNewDialog('Kitchen added successfully', true);
-    // })).subscribe(noop, err => {
-    //   this.openNewDialog('Sorry! Something went wrong.');
-    // });
   }
 
 
@@ -97,12 +85,16 @@ export class AddFoodComponent implements OnInit {
         text: 'Ok',
         onAction: () => {
           if (success) {
-            this.router.navigateByUrl(DASHBOARD_PATH).then(() => console.log('redirect to dashboard'));
+            this.location.back();
           } else {
             return true;
           }
         }
       }]
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.addIngredient();
   }
 }
