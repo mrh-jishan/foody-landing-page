@@ -53,7 +53,8 @@ export class MyKitchenComponent implements OnInit {
   }
 
   goToFood(kitchen: Kitchen) {
-    this.router.navigateByUrl(`secure/my-kitchen/${kitchen.id}/food`).then(() => console.log('go to food.', kitchen));
+    this.router.navigateByUrl(`secure/my-kitchen/${kitchen.id}/food`)
+      .then(() => console.log('go to food.'));
   }
 
 }

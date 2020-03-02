@@ -53,7 +53,7 @@
                 <div class="text-left px-3 w-100">
                   <p class="m-0">
                     <span class="text-danger">{{food.name | titlecase}}</span> -
-                    <small class="text-secondary font-italic">{{food.category | lowercase}}</small>
+                    <small class="text-secondary font-italic">{{getFoodCategory(food.category) | lowercase}}</small>
                   </p>
 
                   <p class="my-1 small ingredients">

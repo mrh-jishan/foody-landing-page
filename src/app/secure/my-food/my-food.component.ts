@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {FOOD_CATEGORY} from '../../service/constant';
 
 @Component({
   selector: 'app-my-food',
@@ -16,4 +17,10 @@ export class MyFoodComponent implements OnInit {
   ngOnInit() {
     this.kitchen = this.route.snapshot.data.foods;
   }
+
+  getFoodCategory(id) {
+    const category = FOOD_CATEGORY.find(value => value.key === id);
+    return category === undefined ? '' : category.value;
+  }
+
 }

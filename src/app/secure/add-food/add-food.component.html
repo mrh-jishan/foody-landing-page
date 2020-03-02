@@ -26,7 +26,8 @@
         <div class="form-group col-md-4">
           <label>Food Category <sup>*</sup></label>
           <select class="form-control" formControlName="category">
-            <option *ngFor="let category of foodCategory" [value]="category.key">{{category.value}}</option>
+            <option *ngFor="let category of foodCategory"
+                    [value]="category.key">{{category.value}}</option>
           </select>
           <small class="text-danger" *ngIf="foodForm.get('category').invalid &&
           foodForm.get('category').touched">Please
@@ -82,44 +83,6 @@
         </div>
       </div>
 
-      <!--      <div class="card" formGroupName="kitchen_address_attributes">-->
-      <!--        <div class="card-header">-->
-      <!--          Kitchen Address-->
-      <!--        </div>-->
-      <!--        <div class="card-body">-->
-      <!--          <div class="form-group">-->
-      <!--            <label>Address <sup>*</sup></label>-->
-      <!--            <textarea type="text" class="form-control" placeholder="1234 Main St" formControlName="address"></textarea>-->
-      <!--            <small class="text-danger" *ngIf="address.get('address').invalid && address.get('address').touched">Please-->
-      <!--              enter address.</small>-->
-      <!--          </div>-->
-
-      <!--          <div class="form-row">-->
-      <!--            <div class="form-group col-md-6">-->
-      <!--              <label>City <sup>*</sup></label>-->
-      <!--              <input type="text" class="form-control" formControlName="city">-->
-      <!--              <small class="text-danger" *ngIf="address.get('city').invalid && address.get('city').touched">Please-->
-      <!--                enter city.</small>-->
-      <!--            </div>-->
-
-      <!--            <div class="form-group col-md-4">-->
-      <!--              <label>State <sup>*</sup></label>-->
-      <!--              <select class="form-control" formControlName="state">-->
-      <!--                <option *ngFor="let state of states" [value]="state.key">{{state.value}}</option>-->
-      <!--              </select>-->
-      <!--              <small class="text-danger" *ngIf="address.get('state').invalid && address.get('state').touched">Please-->
-      <!--                select a state.</small>-->
-      <!--            </div>-->
-
-      <!--            <div class="form-group col-md-2">-->
-      <!--              <label>Zip <sup>*</sup></label>-->
-      <!--              <input type="text" class="form-control" formControlName="zip_code">-->
-      <!--              <small class="text-danger" *ngIf="address.get('zip_code').invalid && address.get('zip_code').touched">Please-->
-      <!--                enter postal code.</small>-->
-      <!--            </div>-->
-      <!--          </div>-->
-      <!--        </div>-->
-      <!--      </div>-->
       <div class="form-row pull-right pt-3">
         <button type="submit" class="btn btn-primary" (click)="add_food()" [disabled]="foodForm.invalid">Add
           Kitchen
