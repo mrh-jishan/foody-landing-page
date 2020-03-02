@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {HOME_PATH} from '../service/constant';
 import {User} from '../service/model';
 import {SideBarService} from '../service/side-bar.service';
+import {debounce} from '../service/debounce';
 
 @Component({
   selector: 'app-secure',
@@ -53,6 +54,7 @@ export class SecureComponent implements OnInit, AfterContentChecked {
   }
 
   @HostListener('window:resize', ['$event'])
+  @debounce()
   onResize(event) {
     this.init_window_size();
   }

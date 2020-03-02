@@ -1,4 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
+import {debounce} from '../service/debounce';
 
 @Component({
   selector: 'app-public',
@@ -26,6 +27,7 @@ export class PublicComponent implements OnInit {
   }
 
   @HostListener('window:scroll', ['$event'])
+  @debounce()
   onScroll(event) {
     this.goToTopShow = window.scrollY < window.innerHeight;
     // todo fix for the secure page using the directive
