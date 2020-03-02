@@ -5,7 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ModalDialogService} from 'ngx-modal-dialog';
 import {MessageModalComponent} from '../../common/message-modal/message-modal.component';
 import {FoodService} from '../../service/food.service';
-import {switchMap, tap} from 'rxjs/operators';
+import {tap} from 'rxjs/operators';
 import {noop} from 'rxjs';
 import {Location} from '@angular/common';
 
@@ -57,19 +57,12 @@ export class AddFoodComponent implements OnInit, AfterViewInit {
   }
 
   add_food() {
-    this.route.paramMap.pipe(
-      switchMap((paramMap: any) => {
-        return this.foodService.add_food({
-          food: this.foodForm.value
-        }, paramMap.params.id)
-          .pipe(tap((food: any) => {
-            return food;
-          }));
-      }),
-      tap((res: any) => {
+    this.foodService.add_food({
+      food: this.foodForm.value
+    }, this.route.snapshot.data.foodId).pipe(
+      tap((food: any) => {
         this.openNewDialog('Food added successfully', true);
-      })
-    ).subscribe(noop, err => {
+      })).subscribe(noop, err => {
       this.openNewDialog('Sorry! Something went wrong.');
     });
   }

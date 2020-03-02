@@ -26,7 +26,6 @@ export class AppComponent {
     } else {
       await this.userService.get_user().pipe(tap((res: any) => {
         this.auth.update_user(res.data.user);
-        console.log('Received user', res);
         // this.router.navigateByUrl(DASHBOARD_PATH).then(r => console.log('redirect to dashboard page'));
       })).subscribe(noop, (err) => {
         console.log('Err on token.', err);

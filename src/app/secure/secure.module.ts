@@ -17,6 +17,7 @@ import {KitchenCardModule} from '../common/kitchen-card/kitchen-card.module';
 import {MyFoodComponent} from './my-food/my-food.component';
 import {AddFoodComponent} from './add-food/add-food.component';
 import {FoodResolverService} from '../service/food-resolver.service';
+import {AddFoodResolverService} from '../service/add-food-resolver.service';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import {FoodResolverService} from '../service/food-resolver.service';
     KitchenCardModule
   ],
   providers: [
-    FoodResolverService
+    FoodResolverService,
+    AddFoodResolverService
   ]
 })
 export class SecureModule {
