@@ -18,7 +18,6 @@ import {AddFoodResolverService} from '../service/add-food-resolver.service';
 const routes: Routes = [
   {
     path: '',
-    // pathMatch: 'full',
     redirectTo: 'dashboard'
   },
   {
@@ -32,7 +31,9 @@ const routes: Routes = [
       {
         path: 'dashboard/:id/foods',
         component: FoodListComponent,
-        resolve: {foods: FoodResolverService}
+        resolve: {
+          kitchen: FoodResolverService
+        }
       },
       {
         path: 'profile',
@@ -61,12 +62,16 @@ const routes: Routes = [
       {
         path: 'my-kitchen/:id/food',
         component: MyFoodComponent,
-        resolve: {foods: FoodResolverService}
+        resolve: {
+          kitchen: FoodResolverService
+        }
       },
       {
         path: 'my-kitchen/:id/add-food',
         component: AddFoodComponent,
-        resolve: {foodId: AddFoodResolverService}
+        resolve: {
+          foodId: AddFoodResolverService
+        }
       }
     ]
   }

@@ -11,12 +11,11 @@ export class FoodResolverService implements Resolve<Observable<any>> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    return this.foodService.my_kitchen_food(route.paramMap.get('id'))
-      .pipe(
-        map(kitchen => kitchen.data.kitchen),
-        catchError((err) => {
-          return of(err.error);
-        })
-      );
+    return this.foodService.my_kitchen_food(route.paramMap.get('id')).pipe(
+      map(kitchen => kitchen.data.kitchen),
+      catchError((err) => {
+        return of(err.error);
+      })
+    );
   }
 }

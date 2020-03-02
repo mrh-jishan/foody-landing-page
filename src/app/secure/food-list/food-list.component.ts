@@ -14,7 +14,7 @@ export class FoodListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.kitchen = this.route.snapshot.data.foods.data.kitchen;
+    this.kitchen = this.route.snapshot.data.kitchen;
   }
 
 }
