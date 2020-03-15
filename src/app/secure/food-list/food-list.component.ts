@@ -17,4 +17,20 @@ export class FoodListComponent implements OnInit {
     this.kitchen = this.route.snapshot.data.kitchen;
   }
 
+  add(itemCount) {
+    itemCount.value = Number(itemCount.value) + 1;
+  }
+
+  rem(itemCount) {
+    if (Number(itemCount.value) <= 1) {
+      itemCount.value = 1;
+    } else {
+      itemCount.value = Number(itemCount.value) - 1;
+    }
+  }
+
+  addToCart(total, food) {
+    console.log(total, food);
+  }
+
 }
