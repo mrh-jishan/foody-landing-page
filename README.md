@@ -1,1 +1,1 @@
-link- https://mrh-jishan.github.io/foody-landing-page/pages/home
+link- https://mrh-jishan.github.io/beliciousbd-fe/public/home
